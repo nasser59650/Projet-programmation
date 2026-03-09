@@ -19,8 +19,8 @@ a = Vector2(3323, -16)
 b = Vector2(-15, -10)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0hol4"]
-a = Vector2(1997, 1661)
-b = Vector2(1992, -1653)
+a = Vector2(-1279, 1653)
+b = Vector2(-1287, -1637)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(156, 144)
@@ -61,61 +61,59 @@ size = Vector2(10, 20)
 [node name="Node2D" type="Node2D" unique_id=1228838396]
 position = Vector2(-2119, -670)
 
-[node name="CharacterBody2D (voit principale)" type="CharacterBody2D" parent="." unique_id=471719589]
+[node name="voiture principale" type="CharacterBody2D" parent="." unique_id=471719589]
 position = Vector2(205, 164)
 collision_mask = 4
 script = ExtResource("1_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D (voit principale)" unique_id=1906267954]
+[node name="Sprite2D" type="Sprite2D" parent="voiture principale" unique_id=1906267954]
 z_index = 1
 scale = Vector2(0.14, 0.14)
 texture = SubResource("CompressedTexture2D_0e48y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D (voit principale)" unique_id=1462119494]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="voiture principale" unique_id=1462119494]
 z_index = 3
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D (voit principale)" unique_id=622505052]
+[node name="Camera2D" type="Camera2D" parent="voiture principale" unique_id=622505052]
 zoom = Vector2(2, 2)
 limit_enabled = false
 
-[node name="CharacterBody2D2 (piéton)" type="CharacterBody2D" parent="." unique_id=2033567298]
+[node name="piéton1" type="CharacterBody2D" parent="." unique_id=2033567298]
 script = ExtResource("2_0hol4")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2 (piéton)" unique_id=592520590]
+[node name="Sprite2D" type="Sprite2D" parent="piéton1" unique_id=592520590]
 z_index = 2
 scale = Vector2(0.24603046, 0.16666661)
 texture = ExtResource("3_q6r6c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2 (piéton)" unique_id=1564334712]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piéton1" unique_id=1564334712]
 z_index = 3
 shape = SubResource("RectangleShape2D_ta5nu")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2127734462]
 
 [node name="Map (Sprite2D)" type="Sprite2D" parent="." unique_id=1144513032]
 position = Vector2(-646, -451)
 texture = ExtResource("3_epypp")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1027227531]
+[node name="contour map" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=893500894]
+collision_layer = 255
+collision_mask = 255
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D" unique_id=156437893]
-position = Vector2(-1660, -1628)
-shape = SubResource("SegmentShape2D_epypp")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=893500894]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D2" unique_id=75407962]
+[node name="Bas" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=75407962]
 position = Vector2(-1666, 1655)
 shape = SubResource("SegmentShape2D_epypp")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1909614903]
+[node name="Haut" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=156437893]
+position = Vector2(-1660, -1628)
+shape = SubResource("SegmentShape2D_epypp")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D3" unique_id=593174636]
+[node name="Droite" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=593174636]
 position = Vector2(-352, 0)
 shape = SubResource("SegmentShape2D_0hol4")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=563325774]
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D4" unique_id=1341326360]
+[node name="Gauche" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=1341326360]
 position = Vector2(-352, 0)
 shape = SubResource("SegmentShape2D_0hol4")
 
