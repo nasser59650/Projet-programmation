@@ -15,4 +15,8 @@ func _physics_process(_delta):
 		direction.y += 1
 	
 	velocity = direction * SPEED
+	
+	if direction != Vector2.ZERO:
+		rotation = direction.angle() + PI/2
+	
 	move_and_slide()
