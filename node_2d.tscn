@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://jr31vmkr5jjw" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="PackedScene" uid="uid://n6myurh0vucm" path="res://piéton_1.tscn" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cowo0qjcq10wt" path="res://gta1-liberty-city-hd.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://cxiqg0fk5mm7p" path="res://caddie_rouge_transparent_v2.png" id="3_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_kdubu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
 load_path = "res://.godot/imported/voiture01.png-944ac7d052af8df8a6f9e64c77ab1f16.ctex"
@@ -21,9 +23,6 @@ border_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.46060005, 0.6, 0.35400003, 1)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0hol4"]
-load_path = "res://.godot/imported/Shop.jpg-2bf1290e649b45ef0b1b4d699d727907.ctex"
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
 a = Vector2(3323, -16)
@@ -113,11 +112,13 @@ fill_mode = 2
 show_percentage = false
 
 [node name="BoutonShop" type="Button" parent="voiture principale/CanvasLayer" unique_id=609468536]
-offset_left = 1050.0
+offset_left = 1000.0
 offset_top = 20.0
-offset_right = 1110.0
-offset_bottom = 60.0
-icon = SubResource("CompressedTexture2D_0hol4")
+offset_right = 1100.0
+offset_bottom = 120.0
+focus_mode = 0
+icon = ExtResource("3_q6r6c")
+expand_icon = true
 
 [node name="MenuShop" type="Panel" parent="voiture principale/CanvasLayer" unique_id=1459692178]
 visible = false
@@ -128,12 +129,15 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.050980393, 1, 1, 1)
 
 [node name="BoutonBoost" type="Button" parent="voiture principale/CanvasLayer/MenuShop" unique_id=1902999512]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 576.0
+offset_bottom = 324.0
 text = "Recharger Boost - 20$"
+icon = ExtResource("4_kdubu")
+expand_icon = true
 
 [node name="piéton" parent="." unique_id=1597165178 instance=ExtResource("2_epypp")]
 
