@@ -1,6 +1,14 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
+var dezoom = false
+
+func _process(_delta):
+	if Input.is_action_pressed("zoom_out"):
+			$Camera2D.zoom = Vector2(0.5, 0.5)
+	else:
+			$Camera2D.zoom = Vector2(2, 2)
+
+const SPEED = 100.0
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
