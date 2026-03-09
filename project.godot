@@ -27,7 +27,7 @@ zoom_out={
 
 2d_physics/layer_1="joueur"
 2d_physics/layer_2="voiture"
-2d_physics/layer_3="trottoirs"
+2d_physics/layer_3="Piéton"
 
 [physics]
 

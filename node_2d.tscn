@@ -117,86 +117,218 @@ shape = SubResource("SegmentShape2D_0hol4")
 position = Vector2(-352, 0)
 shape = SubResource("SegmentShape2D_0hol4")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1666490435]
+[node name="Trotoires" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1666490435]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D5" unique_id=1617466298]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1617466298]
 position = Vector2(1460, 1479)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=79356084]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D6" unique_id=1495868593]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1495868593]
 position = Vector2(1247, 1478)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=939511086]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D7" unique_id=107353992]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=107353992]
 position = Vector2(1217, 1325)
 shape = SubResource("RectangleShape2D_kdubu")
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=608930170]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D8" unique_id=1863184837]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1863184837]
 position = Vector2(1369.5, 1272.75)
 shape = SubResource("RectangleShape2D_d21ai")
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1538055986]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D9" unique_id=1822921986]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1822921986]
 position = Vector2(1491, 1273.5)
 shape = SubResource("RectangleShape2D_rj586")
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1568368635]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D10" unique_id=1621164258]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1621164258]
 position = Vector2(1214, 1202.5)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=958112661]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D11" unique_id=215218911]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=215218911]
 position = Vector2(1189.75, 1042.5)
 shape = SubResource("RectangleShape2D_ir8iy")
 
-[node name="StaticBody2D12" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=203228957]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D12" unique_id=1326627603]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1326627603]
 position = Vector2(1305.5, 985.5)
 shape = SubResource("RectangleShape2D_hqns4")
 
-[node name="StaticBody2D13" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1948812751]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D13" unique_id=1988791489]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1988791489]
 position = Vector2(1318.5, 1093)
 shape = SubResource("RectangleShape2D_x0ka3")
 
-[node name="StaticBody2D14" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1186493465]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D14" unique_id=1912744897]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1912744897]
 position = Vector2(1465, 1094.5)
 shape = SubResource("RectangleShape2D_0h7mo")
 
-[node name="StaticBody2D15" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=2114992828]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D15" unique_id=1770684165]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1770684165]
 position = Vector2(1453.5, 984.5)
 shape = SubResource("RectangleShape2D_nr8wp")
 
-[node name="StaticBody2D16" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=572851924]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/StaticBody2D16" unique_id=1172604318]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1172604318]
 position = Vector2(1460, 1479)
 shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="Bâtiments" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1367671936]
+position = Vector2(646, 451)
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1761072184]
+position = Vector2(0, 55)
+polygon = PackedVector2Array(879, 1030, 752, 1029, 751, 993, 776, 994, 777, 981, 792, 979, 789, 964, 776, 964, 776, 950, 753, 949, 750, 915, 874, 917, 874, 947, 850, 950, 849, 962, 836, 963, 836, 979, 849, 978, 850, 990, 876, 994)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=2060819378]
+polygon = PackedVector2Array(696, 1082, 696, 1025, 661, 1024, 664, 1037, 636, 1036, 637, 1083)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=2121536408]
+polygon = PackedVector2Array(582, 1069, 585, 1082, 616, 1084, 616, 1038, 585, 1038, 586, 1049, 559, 1046, 554, 970, 508, 972, 508, 1082, 555, 1084, 557, 1068)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1338131161]
+polygon = PackedVector2Array(572, 972, 695, 973, 695, 1005, 572, 1007)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=503372854]
+polygon = PackedVector2Array(351, 922, 351, 994, 278, 994, 279, 920)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=548538628]
+polygon = PackedVector2Array(403, 922, 425, 922, 427, 1031, 405, 1029)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=452804620]
+polygon = PackedVector2Array(426, 1049, 426, 1084, 382, 1085, 380, 1048)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1349536970]
+polygon = PackedVector2Array(292, 1051, 362, 1050, 365, 1082, 292, 1083)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1688722883]
+polygon = PackedVector2Array(227, 1050, 274, 1048, 274, 1082, 227, 1083)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=911774656]
+polygon = PackedVector2Array(211, 1049, 212, 1087, 164, 1084, 161, 1047)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1392846334]
+polygon = PackedVector2Array(145, 1049, 145, 1083, 99, 1083, 99, 1047)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=463053741]
+polygon = PackedVector2Array(148, 985, 149, 1031, 225, 1031, 222, 985)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=208797070]
+polygon = PackedVector2Array(224, 921, 225, 969, 151, 969, 151, 921)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1439515574]
+polygon = PackedVector2Array(506, 919, 573, 921, 568, 894, 548, 895, 549, 871, 596, 871, 596, 917, 638, 916, 637, 833, 506, 830, 507, 865, 520, 868, 521, 892, 504, 894)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=395846723]
+polygon = PackedVector2Array(688, 845, 759, 845, 759, 917, 689, 917)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=135030517]
+polygon = PackedVector2Array(815, 870, 815, 914, 876, 919, 876, 868)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=807245648]
+polygon = PackedVector2Array(875, 838, 816, 839, 815, 793, 875, 793)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1027116564]
+polygon = PackedVector2Array(815, 775, 815, 730, 837, 730, 837, 738, 852, 742, 853, 726, 875, 726, 877, 776, 854, 776, 853, 759, 839, 763, 838, 777)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1191433025]
+polygon = PackedVector2Array(688, 827, 760, 828, 760, 793, 747, 792, 747, 766, 760, 765, 761, 728, 686, 728, 686, 763, 699, 765, 699, 787, 686, 792)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1174763912]
+polygon = PackedVector2Array(508, 777, 555, 776, 556, 762, 583, 763, 586, 777, 633, 776, 632, 728, 507, 729)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=646218829]
+polygon = PackedVector2Array(428, 843, 428, 865, 405, 866, 405, 853, 391, 852, 390, 865, 366, 867, 366, 843, 378, 843, 378, 830, 366, 829, 365, 802, 391, 802, 391, 816, 403, 818, 404, 803, 430, 804, 430, 828, 413, 828, 414, 839)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=581453561]
+polygon = PackedVector2Array(405, 728, 406, 788, 428, 789, 427, 726)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1873389637]
+polygon = PackedVector2Array(278, 729, 278, 774, 290, 774, 289, 787, 338, 788, 337, 775, 352, 774, 350, 728)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1164883617]
+polygon = PackedVector2Array(350, 807, 352, 868, 279, 865, 276, 853, 263, 852, 263, 818, 275, 817, 278, 805)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1864749659]
+polygon = PackedVector2Array(224, 727, 223, 763, 198, 764, 199, 776, 188, 777, 188, 764, 149, 765, 150, 728)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1774879191]
+polygon = PackedVector2Array(197, 867, 174, 864, 174, 817, 224, 820, 223, 853, 196, 853)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=76133281]
+polygon = PackedVector2Array(429, 675, 431, 575, 405, 576, 404, 610, 390, 613, 392, 647, 403, 647, 405, 673)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=475813926]
+polygon = PackedVector2Array(423, 559, 426, 514, 330, 510, 330, 546, 403, 547, 406, 562)
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1039240084]
+polygon = PackedVector2Array(209, 675, 227, 677, 224, 638, 212, 637, 210, 610, 225, 610, 226, 575, 212, 574, 210, 545, 314, 547, 314, 510, 84, 512, 85, 524, 83, 542, 160, 547, 162, 576, 149, 575, 150, 606, 161, 610, 162, 633, 146, 639, 150, 671)
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=819926493]
+polygon = PackedVector2Array(57, 522, 57, 510, 6, 511, 10, 546, 58, 547)
+
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=510431712]
+polygon = PackedVector2Array(278, 600, 352, 601, 353, 676, 278, 674)
+
+[node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=780541067]
+polygon = PackedVector2Array(-7, 513, -92, 510, -95, 535, -108, 537, -108, 571, -95, 571, -93, 583, -30, 583, -31, 546, -8, 546)
+
+[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=2023672272]
+polygon = PackedVector2Array(21, 601, 95, 601, 96, 674, 21, 675)
+
+[node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=936080218]
+polygon = PackedVector2Array(-94, 599, -35, 600, -33, 673, -94, 675)
+
+[node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=929412624]
+polygon = PackedVector2Array(-95, 729, -84, 727, -82, 715, -43, 713, -43, 724, -32, 727, -33, 760, -92, 763)
+
+[node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1654700298]
+polygon = PackedVector2Array(-17, 728, 18, 729, 19, 762, -16, 762)
+
+[node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=727402898]
+polygon = PackedVector2Array(45, 726, 45, 714, 82, 714, 82, 725, 96, 729, 96, 765, 35, 764, 33, 727)
+
+[node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=2079425568]
+polygon = PackedVector2Array(96, 778, 21, 779, 21, 816, 32, 817, 33, 843, 20, 842, 21, 867, 96, 867, 96, 817, 72, 818, 73, 840, 59, 841, 57, 804, 96, 804)
+
+[node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=877580735]
+polygon = PackedVector2Array(133, 866, 110, 867, 110, 818, 157, 818, 159, 855, 133, 854)
+
+[node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=793840538]
+polygon = PackedVector2Array(-33, 819, -33, 870, -94, 867, -93, 819)
+
+[node name="CollisionPolygon2D41" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=20390863]
+polygon = PackedVector2Array(95, 920, 97, 996, 72, 995, 71, 982, 45, 983, 45, 996, 21, 996, 20, 919, 45, 920, 44, 930, 72, 930, 72, 919)
+
+[node name="CollisionPolygon2D42" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1704973362]
+polygon = PackedVector2Array(-33, 920, -32, 970, -95, 969, -94, 921)
+
+[node name="CollisionPolygon2D43" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=375334008]
+polygon = PackedVector2Array(-95, 985, -35, 985, -34, 1034, -93, 1033)
+
+[node name="CollisionPolygon2D44" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1650629198]
+polygon = PackedVector2Array(-93, 1048, -45, 1048, -45, 1084, -95, 1082)
+
+[node name="CollisionPolygon2D45" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1384229202]
+polygon = PackedVector2Array(-29, 1048, 18, 1049, 18, 1085, -30, 1085)
+
+[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=422955317]
+polygon = PackedVector2Array(35, 1050, 81, 1050, 83, 1086, 35, 1084)
+
+[node name="CollisionPolygon2D47" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=441340079]
+polygon = PackedVector2Array(509, 512, 580, 511, 580, 560, 507, 557)
+
+[node name="CollisionPolygon2D48" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1968455669]
+polygon = PackedVector2Array(508, 573, 582, 574, 581, 608, 509, 609)
+
+[node name="CollisionPolygon2D49" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1879004492]
+polygon = PackedVector2Array(509, 625, 581, 626, 581, 672, 509, 673)
+
+[node name="CollisionPolygon2D50" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=145601475]
+polygon = PackedVector2Array(636, 614, 709, 614, 710, 674, 637, 675)
+
+[node name="CollisionPolygon2D51" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1394175078]
+polygon = PackedVector2Array(874, 614, 876, 674, 764, 674, 765, 615)
+
+[node name="CollisionPolygon2D52" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=453717102]
+polygon = PackedVector2Array(875, 558, 738, 558, 739, 510, 877, 511)
+
+[node name="CollisionPolygon2D53" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1728921925]
+polygon = PackedVector2Array(637, 560, 683, 559, 683, 512, 637, 511)
