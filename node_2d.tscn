@@ -168,6 +168,33 @@ shape = SubResource("RectangleShape2D_nr8wp")
 position = Vector2(1460, 1479)
 shape = SubResource("RectangleShape2D_d2bti")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=1920576188]
+polygon = PackedVector2Array(534, 1357, 535, 1548, 1091, 1549, 1088, 1357, 1034, 1356, 1034, 1477, 990, 1486, 931, 1491, 889, 1479, 886, 1356, 780, 1355, 778, 1479, 742, 1484, 677, 1491, 664, 1481, 630, 1481, 628, 1356)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=476528093]
+polygon = PackedVector2Array(653, 1355, 755, 1355, 755, 1460, 653, 1459)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=332678504]
+polygon = PackedVector2Array(907, 1354, 1012, 1356, 1013, 1461, 907, 1461)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=1932987204]
+polygon = PackedVector2Array(535, 1255, 629, 1253, 629, 1335, 536, 1334)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=310518746]
+polygon = PackedVector2Array(753, 1162, 536, 1163, 537, 1231, 649, 1231, 650, 1334, 884, 1334, 885, 1254, 759, 1252)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=2128301605]
+polygon = PackedVector2Array(779, 1163, 779, 1232, 884, 1231, 885, 1163)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=80721973]
+polygon = PackedVector2Array(1012, 1163, 906, 1163, 908, 1333, 1091, 1332, 1089, 1163, 1035, 1165, 1035, 1238, 1011, 1241)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=139245495]
+polygon = PackedVector2Array(705, 946, 536, 947, 537, 1140, 628, 1139, 628, 1123, 623, 1113, 623, 1073, 630, 1059, 630, 1018, 637, 1013, 706, 1014)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Map (Sprite2D)/Trotoires" unique_id=1369243550]
+polygon = PackedVector2Array(727, 947, 783, 947, 789, 952, 863, 952, 870, 942, 1092, 945, 1089, 1142, 1036, 1140, 1036, 1020, 1026, 1014, 892, 1014, 883, 1021, 884, 1140, 778, 1142, 779, 1023, 771, 1012, 726, 1013)
+
 [node name="Bâtiments" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1367671936]
 position = Vector2(646, 451)
 collision_layer = 255
