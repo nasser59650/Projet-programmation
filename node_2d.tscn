@@ -11,9 +11,27 @@ load_path = "res://.godot/imported/voiture01.png-944ac7d052af8df8a6f9e64c77ab1f1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(10, 20)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
+bg_color = Color(0.11372549, 0.10980392, 0.11372549, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0.46060005, 0.6, 0.35400003, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0hol4"]
+load_path = "res://.godot/imported/Shop.jpg-2bf1290e649b45ef0b1b4d699d727907.ctex"
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
 a = Vector2(3323, -16)
 b = Vector2(-15, -10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q6r6c"]
+a = Vector2(1981, 1647)
+b = Vector2(1981, -1633)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0hol4"]
 a = Vector2(-1279, 1653)
@@ -77,8 +95,47 @@ shape = SubResource("RectangleShape2D_epypp")
 zoom = Vector2(2, 2)
 limit_enabled = false
 
+[node name="CanvasLayer" type="CanvasLayer" parent="voiture principale" unique_id=1991327061]
+
+[node name="Jauge" type="ProgressBar" parent="voiture principale/CanvasLayer" unique_id=1856924668]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 400.0
+offset_right = -22.0
+offset_bottom = 600.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.9843137, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_0hol4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q6r6c")
+fill_mode = 2
+show_percentage = false
+
+[node name="BoutonShop" type="Button" parent="voiture principale/CanvasLayer" unique_id=609468536]
+offset_left = 1050.0
+offset_top = 20.0
+offset_right = 1110.0
+offset_bottom = 60.0
+icon = SubResource("CompressedTexture2D_0hol4")
+
+[node name="MenuShop" type="Panel" parent="voiture principale/CanvasLayer" unique_id=1459692178]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="voiture principale/CanvasLayer/MenuShop" unique_id=305935378]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BoutonBoost" type="Button" parent="voiture principale/CanvasLayer/MenuShop" unique_id=1902999512]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Recharger Boost - 20$"
+
 [node name="piéton" parent="." unique_id=1597165178 instance=ExtResource("2_epypp")]
-collision_layer = 4
 
 [node name="Map (Sprite2D)" type="Sprite2D" parent="." unique_id=1144513032]
 position = Vector2(-646, -451)
@@ -98,7 +155,7 @@ shape = SubResource("SegmentShape2D_epypp")
 
 [node name="Droite" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=593174636]
 position = Vector2(-352, 0)
-shape = SubResource("SegmentShape2D_0hol4")
+shape = SubResource("SegmentShape2D_q6r6c")
 
 [node name="Gauche" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=1341326360]
 position = Vector2(-352, 0)
@@ -378,4 +435,9 @@ polygon = PackedVector2Array(492, 1097, 890, 1103, 891, 1143, 491, 1147)
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D" unique_id=1273492891]
 polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=880533202]
+position = Vector2(-2280, -2088)
+
+[connection signal="pressed" from="voiture principale/CanvasLayer/BoutonShop" to="voiture principale" method="_on_bouton_shop_pressed"]
+[connection signal="pressed" from="voiture principale/CanvasLayer/MenuShop/BoutonBoost" to="voiture principale" method="_on_bouton_boost_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
