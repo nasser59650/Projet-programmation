@@ -94,7 +94,7 @@ shape = SubResource("RectangleShape2D_ta5nu")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2127734462]
 
 [node name="Map (Sprite2D)" type="Sprite2D" parent="." unique_id=1144513032]
-position = Vector2(-646, -451)
+position = Vector2(1229, -1020)
 texture = ExtResource("3_epypp")
 
 [node name="contour map" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=893500894]
