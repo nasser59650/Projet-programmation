@@ -33,6 +33,7 @@ boost={
 2d_physics/layer_1="joueur"
 2d_physics/layer_2="voiture"
 2d_physics/layer_3="Piéton"
+2d_physics/layer_4="Bâtiments"
 
 [physics]
 

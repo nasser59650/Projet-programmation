@@ -78,8 +78,7 @@ zoom = Vector2(2, 2)
 limit_enabled = false
 
 [node name="piéton" parent="." unique_id=1597165178 instance=ExtResource("2_epypp")]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2127734462]
+collision_layer = 4
 
 [node name="Map (Sprite2D)" type="Sprite2D" parent="." unique_id=1144513032]
 position = Vector2(-646, -451)
@@ -353,3 +352,30 @@ polygon = PackedVector2Array(875, 558, 738, 558, 739, 510, 877, 511)
 
 [node name="CollisionPolygon2D53" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1728921925]
 polygon = PackedVector2Array(637, 560, 683, 559, 683, 512, 637, 511)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1408785531]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1618929526]
+polygon = PackedVector2Array(444, 1097, 447, 497, 488, 497, 492, 1099)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=1087605450]
+polygon = PackedVector2Array(440, 1099, 442, 1142, -110, 1147, -107, 1099)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D" unique_id=754396425]
+polygon = PackedVector2Array(-116, 1097, -153, 1099, -158, 493, -111, 495)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D" unique_id=88998363]
+polygon = PackedVector2Array(-109, 447, -109, 495, 443, 493, 444, 447)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Area2D" unique_id=762778086]
+polygon = PackedVector2Array(492, 448, 890, 444, 893, 490, 488, 493)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Area2D" unique_id=1906281054]
+polygon = PackedVector2Array(492, 1097, 890, 1103, 891, 1143, 491, 1147)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D" unique_id=1273492891]
+polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
