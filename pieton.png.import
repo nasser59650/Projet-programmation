@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy4cqab7em7ld"
-path="res://.godot/imported/pieton-enfant01.png-b2e46a2bfda5125d25485f3523208a5b.ctex"
+path="res://.godot/imported/pieton.png-7f4e1caee7843e1300fb6d66d7d7ad24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pieton-enfant01.png"
-dest_files=["res://.godot/imported/pieton-enfant01.png-b2e46a2bfda5125d25485f3523208a5b.ctex"]
+source_file="res://pieton.png"
+dest_files=["res://.godot/imported/pieton.png-7f4e1caee7843e1300fb6d66d7d7ad24.ctex"]
 
 [params]
 
