@@ -3,15 +3,13 @@
 [ext_resource type="Script" uid="uid://i83n72rl4wbv" path="res://node_2d.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://jr31vmkr5jjw" path="res://character_body_2d.gd" id="1_epypp"]
 [ext_resource type="PackedScene" uid="uid://n6myurh0vucm" path="res://piéton_1.tscn" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://dk37pcgmxyfgm" path="res://camion.png" id="3_d21ai"]
 [ext_resource type="Texture2D" uid="uid://cowo0qjcq10wt" path="res://gta1-liberty-city-hd.png" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://cxiqg0fk5mm7p" path="res://caddie_rouge_transparent_v2.png" id="3_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_kdubu"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
-load_path = "res://.godot/imported/voiture01.png-944ac7d052af8df8a6f9e64c77ab1f16.ctex"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(10, 20)
+size = Vector2(23, 48)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
 bg_color = Color(0.11372549, 0.10980392, 0.11372549, 1)
@@ -28,7 +26,7 @@ bg_color = Color(0.46060005, 0.6, 0.35400003, 1)
 bg_color = Color(0.42179954, 0.21295458, 0.26940662, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
-size = Vector2(12, 20)
+size = Vector2(23, 48)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
 a = Vector2(3323, -16)
@@ -91,10 +89,11 @@ script = ExtResource("1_epypp")
 [node name="Sprite2D" type="Sprite2D" parent="voiture principale" unique_id=1906267954]
 z_index = 1
 scale = Vector2(0.14, 0.14)
-texture = SubResource("CompressedTexture2D_0e48y")
+texture = ExtResource("3_d21ai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="voiture principale" unique_id=1462119494]
 z_index = 3
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="voiture principale" unique_id=622505052]
@@ -179,6 +178,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="voiture principale/Area2D" unique_id=1717746518]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_ta5nu")
 
 [node name="piéton" parent="." unique_id=1597165178 instance=ExtResource("2_epypp")]
@@ -480,8 +480,6 @@ polygon = PackedVector2Array(492, 1097, 890, 1103, 891, 1143, 491, 1147)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D" unique_id=1273492891]
 polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1308891918]
 
 [connection signal="pressed" from="voiture principale/CanvasLayer/BoutonShop" to="voiture principale" method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="voiture principale/CanvasLayer/MenuShop/BoutonBoost" to="voiture principale" method="_on_bouton_boost_pressed"]
