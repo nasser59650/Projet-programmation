@@ -8,6 +8,7 @@ const BOOST_MAX = 100.0
 const BOOST_DRAIN = 30.0
 const BOOST_REGEN = 0.0
 var argent = 100
+var compteur = 0
 
 func _process(_delta):
 	if Input.is_action_pressed("zoom_out"):
@@ -17,6 +18,14 @@ func _process(_delta):
 	
 	if has_node("CanvasLayer/MenuShop/Label"):
 		$CanvasLayer/MenuShop/Label.text = "Argent : " + str(int(argent)) + "$"
+	
+	if has_node("CanvasLayer/JaugeCompteur"):
+		$CanvasLayer/JaugeCompteur.value = compteur
+	
+	if compteur >= 100:
+		get_tree().paused = true
+		if has_node("CanvasLayer/LabelGameOver"):
+			$CanvasLayer/LabelGameOver.visible = true
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
@@ -57,3 +66,8 @@ func _on_bouton_boost_pressed() -> void:
 	if argent >= 20:
 		argent -= 20
 		boost_energy = BOOST_MAX
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("pietons"):
+		compteur += 2
+		body.queue_free()

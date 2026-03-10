@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 30.0
 const CHANGE_DIR_TIME = 2.0
-
 var direction = Vector2.ZERO
 var timer = 0.0
 var en_attente = false
 
 func _ready():
+	add_to_group("pietons")
 	_new_direction()
 
 func _physics_process(delta):

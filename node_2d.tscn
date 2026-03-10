@@ -24,6 +24,12 @@ border_color = Color(1, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
 bg_color = Color(0.46060005, 0.6, 0.35400003, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.42179954, 0.21295458, 0.26940662, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(12, 20)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
 a = Vector2(3323, -16)
 b = Vector2(-15, -10)
@@ -78,7 +84,8 @@ script = ExtResource("1_0hol4")
 
 [node name="voiture principale" type="CharacterBody2D" parent="." unique_id=471719589]
 position = Vector2(205, 164)
-collision_mask = 4
+collision_mask = 12
+platform_wall_layers = 4
 script = ExtResource("1_epypp")
 
 [node name="Sprite2D" type="Sprite2D" parent="voiture principale" unique_id=1906267954]
@@ -138,6 +145,41 @@ offset_bottom = 324.0
 text = "Recharger Boost - 20$"
 icon = ExtResource("4_kdubu")
 expand_icon = true
+
+[node name="JaugeCompteur" type="ProgressBar" parent="voiture principale/CanvasLayer" unique_id=542603934]
+offset_left = 1000.0
+offset_top = 400.0
+offset_right = 1030.0
+offset_bottom = 600.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_kdubu")
+fill_mode = 3
+
+[node name="Rage" type="Label" parent="voiture principale/CanvasLayer" unique_id=2048650584]
+offset_left = 992.0
+offset_top = 600.0
+offset_right = 1034.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(1, 0, 0.007843138, 1)
+text = "RAGE"
+
+[node name="LabelGameOver" type="Label" parent="voiture principale/CanvasLayer" unique_id=2036513485]
+visible = false
+offset_left = 300.0
+offset_top = 250.0
+offset_right = 10300.0
+offset_bottom = 10250.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="Area2D" type="Area2D" parent="voiture principale" unique_id=1930640344]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="voiture principale/Area2D" unique_id=1717746518]
+shape = SubResource("RectangleShape2D_ta5nu")
 
 [node name="piéton" parent="." unique_id=1597165178 instance=ExtResource("2_epypp")]
 
@@ -443,4 +485,5 @@ polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
 
 [connection signal="pressed" from="voiture principale/CanvasLayer/BoutonShop" to="voiture principale" method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="voiture principale/CanvasLayer/MenuShop/BoutonBoost" to="voiture principale" method="_on_bouton_boost_pressed"]
+[connection signal="body_entered" from="voiture principale/Area2D" to="voiture principale" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
