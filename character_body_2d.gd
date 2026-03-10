@@ -71,3 +71,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pietons"):
 		compteur += 5
 		body.queue_free()
+
+func _on_bouton_voiture_2_pressed() -> void:
+	if argent >= 100:
+		argent -= 100
+		get_parent().changer_voiture(get_parent().voiture2_scene)

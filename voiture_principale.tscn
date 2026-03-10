@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dk37pcgmxyfgm" path="res://camion.png" id="2_wskht"]
 [ext_resource type="Texture2D" uid="uid://cxiqg0fk5mm7p" path="res://caddie_rouge_transparent_v2.png" id="3_xcgmi"]
 [ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_j5vrk"]
+[ext_resource type="Texture2D" uid="uid://dut1r0yen5l5r" path="res://voiture01.png" id="5_wskht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(23, 48)
@@ -89,6 +90,15 @@ text = "Recharger Boost - 20$"
 icon = ExtResource("4_j5vrk")
 expand_icon = true
 
+[node name="BoutonVoiture2" type="Button" parent="CanvasLayer/MenuShop" unique_id=1613280472]
+layout_mode = 0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 648.0
+text = "Acheter la voiture -100$"
+icon = ExtResource("5_wskht")
+expand_icon = true
+
 [node name="JaugeCompteur" type="ProgressBar" parent="CanvasLayer" unique_id=651375144]
 offset_left = 1000.0
 offset_top = 400.0
@@ -127,4 +137,5 @@ shape = SubResource("RectangleShape2D_ta5nu")
 
 [connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonVoiture2" to="." method="_on_bouton_voiture_2_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
