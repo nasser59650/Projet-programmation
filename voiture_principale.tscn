@@ -125,6 +125,41 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "GAME OVER"
 
+[node name="PanelVoiture2" type="Panel" parent="CanvasLayer" unique_id=157539306]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelVitesse" type="Label" parent="CanvasLayer/PanelVoiture2" unique_id=451772479]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Vitesse 100"
+
+[node name="LabelBoost" type="Label" parent="CanvasLayer/PanelVoiture2" unique_id=541876689]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Boost 200"
+
+[node name="LabelPassagers" type="Label" parent="CanvasLayer/PanelVoiture2" unique_id=1656686312]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Passagers simultanés 3"
+
+[node name="BoutonAcheterVoiture2" type="Button" parent="CanvasLayer/PanelVoiture2" unique_id=2043446731]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Acheter -100$"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelVoiture2" unique_id=1110689628]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 154.0
+texture = ExtResource("5_wskht")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=479958754]
 light_mask = 4
 visibility_layer = 4

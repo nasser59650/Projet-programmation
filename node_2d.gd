@@ -5,7 +5,7 @@ extends Node2D
 @export var voiture2_scene = preload("res://voiture_principale2.tscn")
 
 var spawn_timer = 0.0
-const SPAWN_TIME = 3.0
+const SPAWN_TIME = 1.0
 var voiture_actuelle = null
 
 func _ready():
@@ -22,8 +22,8 @@ func _process(delta):
 
 func _spawn_pieton():
 	var pieton = pieton_scene.instantiate()
-	pieton.position = Vector2(-2280 + randi() % 3262, -2088 + randi() % 3275)
-	add_child(pieton)
+	pieton.position = Vector2(-1144 + randi() % 2137, -1536 + randi() % 2720)
+	add_child(pieton)	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:

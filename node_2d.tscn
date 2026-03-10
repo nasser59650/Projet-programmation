@@ -3,20 +3,24 @@
 [ext_resource type="Script" uid="uid://i83n72rl4wbv" path="res://node_2d.gd" id="1_0hol4"]
 [ext_resource type="PackedScene" uid="uid://dg2rlaopvr1ex" path="res://voiture_principale.tscn" id="2_0hol4"]
 [ext_resource type="PackedScene" uid="uid://n6myurh0vucm" path="res://piéton_1.tscn" id="2_epypp"]
-[ext_resource type="Texture2D" uid="uid://cowo0qjcq10wt" path="res://gta1-liberty-city-hd.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://dx2vgkudfulvj" path="res://gta1-liberty-city-hd.png" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://cdw1uc87dilt4" path="res://client01.png" id="5_q6r6c"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kdubu"]
+a = Vector2(2764, -293)
+b = Vector2(569, -293)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
-a = Vector2(3323, -16)
-b = Vector2(-15, -10)
+a = Vector2(2779, 265)
+b = Vector2(584, 268)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q6r6c"]
-a = Vector2(1981, 1647)
-b = Vector2(1981, -1633)
+a = Vector2(1426, 1375)
+b = Vector2(1422, -1399)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0hol4"]
-a = Vector2(-1279, 1653)
-b = Vector2(-1287, -1637)
+a = Vector2(-719, 1365)
+b = Vector2(-717, -1385)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(156, 144)
@@ -64,7 +68,7 @@ position = Vector2(205, 164)
 [node name="piéton" parent="." unique_id=1597165178 instance=ExtResource("2_epypp")]
 
 [node name="Map (Sprite2D)" type="Sprite2D" parent="." unique_id=1144513032]
-position = Vector2(-646, -451)
+position = Vector2(-78, -175)
 texture = ExtResource("3_epypp")
 
 [node name="contour map" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=893500894]
@@ -73,7 +77,7 @@ collision_mask = 255
 
 [node name="Bas" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=75407962]
 position = Vector2(-1666, 1655)
-shape = SubResource("SegmentShape2D_epypp")
+shape = SubResource("SegmentShape2D_kdubu")
 
 [node name="Haut" type="CollisionShape2D" parent="Map (Sprite2D)/contour map" unique_id=156437893]
 position = Vector2(-1660, -1628)
@@ -88,6 +92,7 @@ position = Vector2(-352, 0)
 shape = SubResource("SegmentShape2D_0hol4")
 
 [node name="Trotoires" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1666490435]
+position = Vector2(-553, -252)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map (Sprite2D)/Trotoires" unique_id=1617466298]
@@ -172,7 +177,7 @@ polygon = PackedVector2Array(651, 1035, 756, 1034, 758, 1139, 649, 1142)
 polygon = PackedVector2Array(907, 1035, 1012, 1036, 1012, 1139, 993, 1140, 986, 1135, 941, 1135, 935, 1142, 907, 1141)
 
 [node name="Bâtiments" type="StaticBody2D" parent="Map (Sprite2D)" unique_id=1367671936]
-position = Vector2(646, 451)
+position = Vector2(90, 199)
 collision_layer = 255
 collision_mask = 255
 
@@ -522,33 +527,6 @@ polygon = PackedVector2Array(-849, 960, -761, 960, -761, 1009, -784, 1006, -785,
 [node name="CollisionPolygon2D115" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1180703489]
 polygon = PackedVector2Array(-785, 1022, -762, 1022, -761, 1085, -851, 1084, -849, 1049, -815, 1049, -814, 1062, -785, 1061)
 
-[node name="CollisionPolygon2D116" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1503342558]
-polygon = PackedVector2Array(-1591, 1048, -1517, 1047, -1517, 1108, -1540, 1109, -1539, 1095, -1569, 1096, -1569, 1109, -1591, 1109)
-
-[node name="CollisionPolygon2D117" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1891546529]
-polygon = PackedVector2Array(-1476, 1045, -1427, 1045, -1427, 985, -1475, 985)
-
-[node name="CollisionPolygon2D118" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1059409764]
-polygon = PackedVector2Array(-1389, 980, -1339, 981, -1339, 920, -1386, 921)
-
-[node name="CollisionPolygon2D119" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1106995257]
-polygon = PackedVector2Array(-1283, 959, -1236, 960, -1235, 1018, -1283, 1020)
-
-[node name="CollisionPolygon2D120" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1424032422]
-polygon = PackedVector2Array(-1374, 1035, -1235, 1034, -1236, 1111, -1375, 1111)
-
-[node name="CollisionPolygon2D121" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=110683603]
-polygon = PackedVector2Array(-1182, 1019, -1159, 1019, -1160, 958, -1182, 960)
-
-[node name="CollisionPolygon2D122" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1862899981]
-polygon = PackedVector2Array(-1271, 904, -1236, 904, -1234, 893, -1210, 891, -1209, 904, -1171, 905, -1173, 843, -1271, 844)
-
-[node name="CollisionPolygon2D123" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1433871269]
-polygon = PackedVector2Array(-1503, 1187, -1503, 1176, -1490, 1176, -1490, 1165, -1404, 1164, -1403, 1176, -1387, 1176, -1387, 1164, -1302, 1163, -1302, 1175, -1288, 1175, -1289, 1188, -1281, 1188, -1283, 1164, -1185, 1164, -1186, 1187, -1179, 1187, -1182, 1073, -1160, 1074, -1159, 1176, -1144, 1176, -1143, 1164, -1045, 1163, -1043, 1176, -1020, 1176, -1017, 1188)
-
-[node name="CollisionPolygon2D124" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=1489089190]
-polygon = PackedVector2Array(-1183, 1074, -1158, 1073, -1158, 1177, -1143, 1178, -1142, 1164, -1045, 1165, -1045, 1176, -1019, 1177, -1019, 1188, -1182, 1188)
-
 [node name="CollisionPolygon2D125" type="CollisionPolygon2D" parent="Map (Sprite2D)/Bâtiments" unique_id=6590723]
 polygon = PackedVector2Array(-1068, 1032, -1067, 1059, -1080, 1060, -1080, 1084, -902, 1085, -902, 1045, -888, 1046, -888, 944, -926, 946, -924, 958, -964, 959, -964, 982, -928, 982, -927, 1009, -964, 1009, -964, 1048, -1016, 1048, -1016, 1032, -1005, 1032, -1004, 958, -1040, 956, -1054, 956, -1054, 970, -1081, 972, -1080, 996, -1092, 996, -1092, 1033)
 
@@ -571,6 +549,7 @@ polygon = PackedVector2Array(265, 0, 301, -1, 301, 22, 325, 24, 330, 11, 365, 11
 polygon = PackedVector2Array(381, 13, 427, 11, 428, 88, 380, 85)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1408785531]
+position = Vector2(13, 24)
 collision_layer = 0
 collision_mask = 4
 
@@ -601,5 +580,8 @@ polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
 position = Vector2(419.00003, 505)
 scale = Vector2(0.19870545, 0.17331935)
 texture = ExtResource("5_q6r6c")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1439453683]
+position = Vector2(-1144, -1536)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
