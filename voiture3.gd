@@ -89,8 +89,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_bouton_voiture_2_pressed() -> void:
 	$CanvasLayer/MenuShop.visible = false
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = true
+	$CanvasLayer/PanelVoiture2.visible = true
 
 func _on_bouton_acheter_voiture_2_pressed() -> void:
 	if argent >= 100:
@@ -99,27 +98,27 @@ func _on_bouton_acheter_voiture_2_pressed() -> void:
 		get_parent().changer_voiture(get_parent().voiture2_scene)
 
 func _on_button_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = false
+	$CanvasLayer/PanelVoiture2.visible = false
 	$CanvasLayer/MenuShop.visible = true
 
 func _on_bouton_voiture_3_pressed() -> void:
 	$CanvasLayer/MenuShop.visible = false
-	if has_node("CanvasLayer/PanelVoiture3"):
-		$CanvasLayer/PanelVoiture3.visible = true
+	$CanvasLayer/PanelVoiture3.visible = true
 
 func _on_bouton_acheter_voiture_3_pressed() -> void:
-	if argent >= 150:
-		argent -= 150
+	if argent >= 100:
+		argent -= 100
 		voitures_possedees.append("voiture3")
 		get_parent().changer_voiture(get_parent().voiture3_scene)
 
 func _on_bouton_retour_voiture_3_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture3"):
-		$CanvasLayer/PanelVoiture3.visible = false
+	$CanvasLayer/PanelVoiture3.visible = false
 	$CanvasLayer/MenuShop.visible = true
 
+
 func _on_bouton_retour_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = false
-	$CanvasLayer/MenuShop.visible = true
+	pass # Replace with function body.
+
+
+func _on_bouton_retour_voiture_2_pressed() -> void:
+	pass # Replace with function body.

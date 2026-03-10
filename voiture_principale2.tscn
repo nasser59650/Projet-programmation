@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dut1r0yen5l5r" path="res://voiture01.png" id="2_23gb6"]
 [ext_resource type="Texture2D" uid="uid://cxiqg0fk5mm7p" path="res://caddie_rouge_transparent_v2.png" id="3_f6syk"]
 [ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_my0fv"]
+[ext_resource type="Texture2D" uid="uid://cnv61a2o8fvxc" path="res://moto_rose.png" id="5_j7vxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(10, 21)
@@ -21,6 +22,42 @@ bg_color = Color(0.46060005, 0.6, 0.35400003, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
 bg_color = Color(0.42179954, 0.21295458, 0.26940662, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23gb6"]
+bg_color = Color(0.359389, 0.7111041, 3.85046e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.047058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7vxg"]
+bg_color = Color(0, 1, 0.49411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6syk"]
+bg_color = Color(0.9683222, 0.5966326, 0, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my0fv"]
+bg_color = Color(0.08627451, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_colcu"]
+bg_color = Color(0.359389, 0.7111041, 3.85046e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.047058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_offyg"]
+bg_color = Color(0, 1, 0.49411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g42kk"]
+bg_color = Color(0.9683222, 0.5966326, 0, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epw5e"]
+bg_color = Color(0.08627451, 0.6, 0.6, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
 size = Vector2(14, 25)
@@ -89,6 +126,25 @@ text = "Recharger Boost - 20$"
 icon = ExtResource("4_my0fv")
 expand_icon = true
 
+[node name="BoutonVoiture2" type="Button" parent="CanvasLayer/MenuShop" unique_id=284609005]
+layout_mode = 0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 648.0
+text = "Acheter la voiture -100$"
+icon = ExtResource("2_23gb6")
+expand_icon = true
+
+[node name="BoutonVoiture3" type="Button" parent="CanvasLayer/MenuShop" unique_id=1709891711]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 648.0
+text = "Moto -150$"
+icon = ExtResource("5_j7vxg")
+expand_icon = true
+
 [node name="JaugeCompteur" type="ProgressBar" parent="CanvasLayer" unique_id=651375144]
 offset_left = 1000.0
 offset_top = 400.0
@@ -115,6 +171,134 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "GAME OVER"
 
+[node name="PanelVoiture2" type="Panel" parent="CanvasLayer" unique_id=1076813827]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelVitesse" type="Label" parent="CanvasLayer/PanelVoiture2" unique_id=1682653678]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 275.0
+offset_right = 555.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "- Vitesse : 100"
+
+[node name="LabelBoost" type="Label" parent="CanvasLayer/PanelVoiture2" unique_id=1725805793]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 350.0
+offset_right = 927.0
+offset_bottom = 419.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "- Vitesse Boost : 200"
+
+[node name="LabelPassagers" type="Label" parent="CanvasLayer/PanelVoiture2" unique_id=1200509455]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 2688.0
+offset_bottom = 473.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "- Passagers simultanés : 3"
+
+[node name="BoutonAcheterVoiture2" type="Button" parent="CanvasLayer/PanelVoiture2" unique_id=131464152]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 580.0
+offset_right = 285.0
+offset_bottom = 640.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_23gb6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7vxg")
+text = "Acheter -100$"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelVoiture2" unique_id=711407870]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 364.0
+offset_bottom = 562.0
+texture = ExtResource("5_j7vxg")
+
+[node name="BoutonRetour" type="Button" parent="CanvasLayer/PanelVoiture2" unique_id=1936725419]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 500.0
+offset_right = 611.0
+offset_bottom = 531.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_f6syk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_my0fv")
+text = "Retour"
+
+[node name="PanelVoiture3" type="Panel" parent="CanvasLayer" unique_id=1850522458]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelVitesse" type="Label" parent="CanvasLayer/PanelVoiture3" unique_id=954839419]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 275.0
+offset_right = 555.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "- Vitesse : 100"
+
+[node name="LabelBoost" type="Label" parent="CanvasLayer/PanelVoiture3" unique_id=1121471481]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 350.0
+offset_right = 927.0
+offset_bottom = 419.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "- Vitesse Boost : 200"
+
+[node name="LabelPassagers" type="Label" parent="CanvasLayer/PanelVoiture3" unique_id=1052202335]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 2688.0
+offset_bottom = 473.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "- Passagers simultanés : 3"
+
+[node name="BoutonAcheterVoiture3" type="Button" parent="CanvasLayer/PanelVoiture3" unique_id=1578127012]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 580.0
+offset_right = 285.0
+offset_bottom = 640.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_colcu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_offyg")
+text = "Acheter -100$"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelVoiture3" unique_id=32832817]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 364.0
+offset_bottom = 562.0
+texture = ExtResource("5_j7vxg")
+
+[node name="BoutonRetour" type="Button" parent="CanvasLayer/PanelVoiture3" unique_id=855984020]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 500.0
+offset_right = 611.0
+offset_bottom = 531.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_g42kk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epw5e")
+text = "Retour"
+
 [node name="Area2D" type="Area2D" parent="." unique_id=479958754]
 light_mask = 4
 visibility_layer = 4
@@ -127,4 +311,10 @@ shape = SubResource("RectangleShape2D_ta5nu")
 
 [connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonVoiture2" to="." method="_on_bouton_voiture_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonVoiture3" to="." method="_on_bouton_voiture_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelVoiture2/BoutonAcheterVoiture2" to="." method="_on_bouton_acheter_voiture_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelVoiture2/BoutonRetour" to="." method="_on_bouton_retour_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelVoiture3/BoutonAcheterVoiture3" to="." method="_on_bouton_acheter_voiture_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelVoiture3/BoutonRetour" to="." method="_on_bouton_retour_voiture_3_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
