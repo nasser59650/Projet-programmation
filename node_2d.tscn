@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg2rlaopvr1ex" path="res://voiture_principale.tscn" id="2_0hol4"]
 [ext_resource type="PackedScene" uid="uid://n6myurh0vucm" path="res://piéton_1.tscn" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://cowo0qjcq10wt" path="res://gta1-liberty-city-hd.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://cdw1uc87dilt4" path="res://client01.png" id="5_q6r6c"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epypp"]
 a = Vector2(3323, -16)
@@ -593,5 +594,10 @@ polygon = PackedVector2Array(492, 1097, 890, 1103, 891, 1143, 491, 1147)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D" unique_id=1273492891]
 polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
+
+[node name="CharacterClient" type="CharacterBody2D" parent="." unique_id=1280795232]
+
+[node name="SpriteClient" type="Sprite2D" parent="CharacterClient" unique_id=410027952]
+texture = ExtResource("5_q6r6c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
