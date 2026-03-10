@@ -598,6 +598,8 @@ polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
 [node name="CharacterClient" type="CharacterBody2D" parent="." unique_id=1280795232]
 
 [node name="SpriteClient" type="Sprite2D" parent="CharacterClient" unique_id=410027952]
+position = Vector2(419.00003, 505)
+scale = Vector2(0.19870545, 0.17331935)
 texture = ExtResource("5_q6r6c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
