@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
 var dezoom = false
+<<<<<<< HEAD
 const SPEED = 300.0
 const BOOST_SPEED = 600.0
+=======
+const SPEED = 100.0
+const BOOST_SPEED = 200.0
+>>>>>>> 814799d34fc80d5e1de42e34cfde0eacd79aa4ff
 var boost_energy = 100.0
 const BOOST_MAX = 100.0
 const BOOST_DRAIN = 30.0
