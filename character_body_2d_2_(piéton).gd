@@ -5,11 +5,15 @@ const CHANGE_DIR_TIME = 2.0
 
 var direction = Vector2.ZERO
 var timer = 0.0
+var en_attente = false
 
 func _ready():
 	_new_direction()
 
 func _physics_process(delta):
+	if en_attente:
+		return
+	
 	timer += delta
 	
 	if timer >= CHANGE_DIR_TIME:
@@ -31,3 +35,8 @@ func _new_direction():
 		Vector2.DOWN
 	]
 	direction = directions[randi() % directions.size()]
+
+func entrer_route():
+	en_attente = true
+	await get_tree().create_timer(2.0).timeout
+	en_attente = false
