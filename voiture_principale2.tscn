@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bskr2c7mtrdgc"]
+
+[ext_resource type="Script" uid="uid://jr31vmkr5jjw" path="res://character_body_2d.gd" id="1_23gb6"]
+[ext_resource type="Texture2D" uid="uid://dut1r0yen5l5r" path="res://voiture01.png" id="2_23gb6"]
+[ext_resource type="Texture2D" uid="uid://cxiqg0fk5mm7p" path="res://caddie_rouge_transparent_v2.png" id="3_f6syk"]
+[ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_my0fv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(10, 21)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
+bg_color = Color(0.11372549, 0.10980392, 0.11372549, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0.46060005, 0.6, 0.35400003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdubu"]
+bg_color = Color(0.42179954, 0.21295458, 0.26940662, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(14, 25)
+
+[node name="voiture principale" type="CharacterBody2D" unique_id=204944746]
+collision_mask = 12
+platform_wall_layers = 4
+script = ExtResource("1_23gb6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198608186]
+z_index = 1
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_23gb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1013256828]
+z_index = 3
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=497052561]
+zoom = Vector2(2, 2)
+limit_enabled = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1647667904]
+
+[node name="Jauge" type="ProgressBar" parent="CanvasLayer" unique_id=1648628864]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = 400.0
+offset_right = -22.0
+offset_bottom = 600.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.9843137, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_0hol4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q6r6c")
+fill_mode = 2
+show_percentage = false
+
+[node name="BoutonShop" type="Button" parent="CanvasLayer" unique_id=1886498206]
+offset_left = 1000.0
+offset_top = 20.0
+offset_right = 1100.0
+offset_bottom = 120.0
+focus_mode = 0
+icon = ExtResource("3_f6syk")
+expand_icon = true
+
+[node name="MenuShop" type="Panel" parent="CanvasLayer" unique_id=915939695]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/MenuShop" unique_id=1310236514]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.050980393, 1, 1, 1)
+
+[node name="BoutonBoost" type="Button" parent="CanvasLayer/MenuShop" unique_id=469093075]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 324.0
+text = "Recharger Boost - 20$"
+icon = ExtResource("4_my0fv")
+expand_icon = true
+
+[node name="JaugeCompteur" type="ProgressBar" parent="CanvasLayer" unique_id=651375144]
+offset_left = 1000.0
+offset_top = 400.0
+offset_right = 1030.0
+offset_bottom = 600.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_kdubu")
+fill_mode = 3
+
+[node name="Rage" type="Label" parent="CanvasLayer" unique_id=343443029]
+offset_left = 992.0
+offset_top = 600.0
+offset_right = 1034.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(1, 0, 0.007843138, 1)
+text = "RAGE"
+
+[node name="LabelGameOver" type="Label" parent="CanvasLayer" unique_id=266000268]
+visible = false
+offset_left = 300.0
+offset_top = 250.0
+offset_right = 10300.0
+offset_bottom = 10250.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=479958754]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1484069132]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ta5nu")
+
+[connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
