@@ -4,6 +4,10 @@ extends Node2D
 var spawn_timer = 0.0
 const SPAWN_TIME = 3.0
 
+func _ready():
+	for i in range(50):
+		_spawn_pieton()
+
 func _process(delta):
 	spawn_timer += delta
 	

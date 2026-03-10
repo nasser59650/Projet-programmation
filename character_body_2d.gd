@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var dezoom = false
-const SPEED = 800.0
+const SPEED = 100.0
 const BOOST_SPEED = 200.0
 var boost_energy = 100.0
 const BOOST_MAX = 100.0
