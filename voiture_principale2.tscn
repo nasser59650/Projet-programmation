@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxiqg0fk5mm7p" path="res://caddie_rouge_transparent_v2.png" id="3_f6syk"]
 [ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_my0fv"]
 [ext_resource type="Texture2D" uid="uid://cnv61a2o8fvxc" path="res://moto_rose.png" id="5_j7vxg"]
+[ext_resource type="Texture2D" uid="uid://1a8f5kwcuw5c" path="res://Encre.png" id="6_f6syk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(10, 21)
@@ -298,6 +299,13 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_g42kk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_epw5e")
 text = "Retour"
+
+[node name="TacheEncre" type="Sprite2D" parent="CanvasLayer" unique_id=1178765933]
+visible = false
+modulate = Color(1, 1, 1, 0.0627451)
+position = Vector2(500, 400)
+scale = Vector2(5, 5)
+texture = ExtResource("6_f6syk")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=479958754]
 light_mask = 4

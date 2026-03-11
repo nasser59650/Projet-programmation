@@ -29,6 +29,9 @@ func _process(_delta):
 		if has_node("CanvasLayer/LabelGameOver"):
 			$CanvasLayer/LabelGameOver.visible = true
 	
+	if has_node("CanvasLayer/TacheEncre"):
+		$CanvasLayer/TacheEncre.visible = compteur >= 10
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if has_node("CanvasLayer/PanelVoiture2"):
 			$CanvasLayer/PanelVoiture2.visible = false
