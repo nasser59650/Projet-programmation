@@ -33,7 +33,7 @@ func _process(_delta):
 		if has_node("CanvasLayer/PanelVoiture2"):
 			$CanvasLayer/PanelVoiture2.visible = false
 		if has_node("CanvasLayer/PanelVoiture3"):
-			$AnvasLayer/PanelVoiture3.visible = false
+			$CanvasLayer/PanelVoiture3.visible = false
 		if has_node("CanvasLayer/MenuShop"):
 			$CanvasLayer/MenuShop.visible = false
 	
@@ -45,15 +45,26 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
+	var inverse = compteur >= 50
 	
-	if Input.is_action_pressed("ui_right"):
-		direction.x += 1
-	if Input.is_action_pressed("ui_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("ui_up"):
-		direction.y -= 1
-	if Input.is_action_pressed("ui_down"):
-		direction.y += 1
+	if inverse:
+		if Input.is_action_pressed("ui_right"):
+			direction.x -= 1
+		if Input.is_action_pressed("ui_left"):
+			direction.x += 1
+		if Input.is_action_pressed("ui_up"):
+			direction.y += 1
+		if Input.is_action_pressed("ui_down"):
+			direction.y -= 1
+	else:
+		if Input.is_action_pressed("ui_right"):
+			direction.x += 1
+		if Input.is_action_pressed("ui_left"):
+			direction.x -= 1
+		if Input.is_action_pressed("ui_up"):
+			direction.y -= 1
+		if Input.is_action_pressed("ui_down"):
+			direction.y += 1
 	
 	var using_boost = Input.is_action_pressed("boost") and boost_energy > 0
 	
@@ -124,11 +135,6 @@ func _on_bouton_retour_voiture_3_pressed() -> void:
 	$CanvasLayer/MenuShop.visible = true
 
 func _on_bouton_retour_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = false
-	$CanvasLayer/MenuShop.visible = true
-
-func _on_bouton_retour_voiture_2_pressed() -> void:
 	if has_node("CanvasLayer/PanelVoiture2"):
 		$CanvasLayer/PanelVoiture2.visible = false
 	$CanvasLayer/MenuShop.visible = true

@@ -8,6 +8,7 @@ extends Node2D
 var spawn_timer = 0.0
 const SPAWN_TIME = 1.0
 var voiture_actuelle = null
+var rage_globale = 0
 
 func _ready():
 	for i in range(50):
@@ -20,6 +21,9 @@ func _process(delta):
 	if spawn_timer >= SPAWN_TIME:
 		spawn_timer = 0.0
 		_spawn_pieton()
+	
+	if voiture_actuelle:
+		rage_globale = voiture_actuelle.compteur
 	
 	if Input.is_action_just_pressed("voiture_1"):
 		if "voiture1" in voiture_actuelle.voitures_possedees:

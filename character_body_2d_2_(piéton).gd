@@ -20,7 +20,11 @@ func _physics_process(delta):
 		timer = 0.0
 		_new_direction()
 	
-	velocity = direction * SPEED
+	var multiplicateur = 1.0
+	if get_parent() and get_parent().has_method("get") and "rage_globale" in get_parent():
+		multiplicateur = 1.0 + (get_parent().rage_globale / 10.0) * 0.5
+	
+	velocity = direction * SPEED * multiplicateur
 	
 	if direction != Vector2.ZERO:
 		rotation = direction.angle() + PI/2
