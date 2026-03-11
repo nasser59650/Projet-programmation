@@ -10,6 +10,7 @@ const BOOST_REGEN = 0.0
 var argent = 500
 var compteur = 0
 var voitures_possedees = ["voiture1"]
+@export var tache_sang_scene = preload("res://sang.tscn")
 
 func _process(_delta):
 	if Input.is_action_pressed("zoom_out"):
@@ -32,7 +33,7 @@ func _process(_delta):
 		if has_node("CanvasLayer/PanelVoiture2"):
 			$CanvasLayer/PanelVoiture2.visible = false
 		if has_node("CanvasLayer/PanelVoiture3"):
-			$CanvasLayer/PanelVoiture3.visible = false
+			$AnvasLayer/PanelVoiture3.visible = false
 		if has_node("CanvasLayer/MenuShop"):
 			$CanvasLayer/MenuShop.visible = false
 	
@@ -85,11 +86,15 @@ func _on_bouton_boost_pressed() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pietons"):
 		compteur += 5
+		var tache = tache_sang_scene.instantiate()
+		tache.position = body.position
+		get_parent().add_child(tache)
 		body.queue_free()
 
 func _on_bouton_voiture_2_pressed() -> void:
 	$CanvasLayer/MenuShop.visible = false
-	$CanvasLayer/PanelVoiture2.visible = true
+	if has_node("CanvasLayer/PanelVoiture2"):
+		$CanvasLayer/PanelVoiture2.visible = true
 
 func _on_bouton_acheter_voiture_2_pressed() -> void:
 	if argent >= 100:
@@ -98,27 +103,32 @@ func _on_bouton_acheter_voiture_2_pressed() -> void:
 		get_parent().changer_voiture(get_parent().voiture2_scene)
 
 func _on_button_pressed() -> void:
-	$CanvasLayer/PanelVoiture2.visible = false
+	if has_node("CanvasLayer/PanelVoiture2"):
+		$CanvasLayer/PanelVoiture2.visible = false
 	$CanvasLayer/MenuShop.visible = true
 
 func _on_bouton_voiture_3_pressed() -> void:
 	$CanvasLayer/MenuShop.visible = false
-	$CanvasLayer/PanelVoiture3.visible = true
+	if has_node("CanvasLayer/PanelVoiture3"):
+		$CanvasLayer/PanelVoiture3.visible = true
 
 func _on_bouton_acheter_voiture_3_pressed() -> void:
-	if argent >= 100:
-		argent -= 100
+	if argent >= 150:
+		argent -= 150
 		voitures_possedees.append("voiture3")
 		get_parent().changer_voiture(get_parent().voiture3_scene)
 
 func _on_bouton_retour_voiture_3_pressed() -> void:
-	$CanvasLayer/PanelVoiture3.visible = false
+	if has_node("CanvasLayer/PanelVoiture3"):
+		$CanvasLayer/PanelVoiture3.visible = false
 	$CanvasLayer/MenuShop.visible = true
 
-
 func _on_bouton_retour_pressed() -> void:
-	pass # Replace with function body.
-
+	if has_node("CanvasLayer/PanelVoiture2"):
+		$CanvasLayer/PanelVoiture2.visible = false
+	$CanvasLayer/MenuShop.visible = true
 
 func _on_bouton_retour_voiture_2_pressed() -> void:
-	pass # Replace with function body.
+	if has_node("CanvasLayer/PanelVoiture2"):
+		$CanvasLayer/PanelVoiture2.visible = false
+	$CanvasLayer/MenuShop.visible = true

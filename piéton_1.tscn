@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://n6myurh0vucm"]
 
-[ext_resource type="Script" uid="uid://cjflabs2f7h67" path="res://character_body_2d_2_(piéton).gd" id="1_43uev"]
+[ext_resource type="Script" path="res://character_body_2d_2_(piéton).gd" id="1_43uev"]
 [ext_resource type="Texture2D" uid="uid://dy4cqab7em7ld" path="res://pieton.png" id="2_7e8lk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b8ufodcacpx77"]
+
+[ext_resource type="Texture2D" uid="uid://5vl6ldxqwmqf" path="res://sang.png" id="1_8nuxy"]
+
+[node name="sang" type="Sprite2D" unique_id=882046108]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8nuxy")

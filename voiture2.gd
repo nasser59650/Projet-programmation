@@ -10,6 +10,7 @@ const BOOST_REGEN = 0.0
 var argent = 500
 var compteur = 0
 var voitures_possedees = ["voiture1"]
+@export var tache_sang_scene = preload("res://sang.tscn")
 
 func _process(_delta):
 	if Input.is_action_pressed("zoom_out"):
@@ -85,6 +86,9 @@ func _on_bouton_boost_pressed() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pietons"):
 		compteur += 5
+		var tache = tache_sang_scene.instantiate()
+		tache.position = body.position
+		get_parent().add_child(tache)
 		body.queue_free()
 
 func _on_bouton_voiture_2_pressed() -> void:
