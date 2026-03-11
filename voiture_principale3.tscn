@@ -284,7 +284,7 @@ text = "Retour"
 
 [node name="TacheEncre" type="Sprite2D" parent="CanvasLayer" unique_id=585854879]
 visible = false
-modulate = Color(1, 1, 1, 0.7372549)
+modulate = Color(1, 1, 1, 0.93333334)
 position = Vector2(500, 400)
 scale = Vector2(5, 5)
 texture = ExtResource("6_fc6cg")
