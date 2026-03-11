@@ -30,7 +30,7 @@ func _process(_delta):
 			$CanvasLayer/LabelGameOver.visible = true
 	
 	if has_node("CanvasLayer/TacheEncre"):
-		$CanvasLayer/TacheEncre.visible = compteur >= 10
+		$CanvasLayer/TacheEncre.visible = compteur >= 80
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if has_node("CanvasLayer/PanelVoiture2"):
