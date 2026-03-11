@@ -4,9 +4,12 @@ extends Node2D
 @export var voiture1_scene = preload("res://voiture_principale.tscn")
 @export var voiture2_scene = preload("res://voiture_principale2.tscn")
 @export var voiture3_scene = preload("res://voiture_principale3.tscn")
+@export var client_scene = preload("res://client.tscn")
 
 var spawn_timer = 0.0
 const SPAWN_TIME = 1.0
+var client_timer: float = 0.0
+const CLIENT_SPAWN_TIME = 10.0
 var voiture_actuelle = null
 var rage_globale = 0
 
@@ -17,10 +20,14 @@ func _ready():
 
 func _process(delta):
 	spawn_timer += delta
-	
 	if spawn_timer >= SPAWN_TIME:
 		spawn_timer = 0.0
 		_spawn_pieton()
+	
+	client_timer += delta
+	if client_timer >= CLIENT_SPAWN_TIME:
+		client_timer = 0.0
+		_spawn_client()
 	
 	if voiture_actuelle:
 		rage_globale = voiture_actuelle.compteur
@@ -42,6 +49,11 @@ func _spawn_pieton():
 	pieton.position = Vector2(-1144 + randi() % 2137, -1536 + randi() % 2720)
 	add_child(pieton)
 
+func _spawn_client():
+	var client = client_scene.instantiate()
+	client.position = Vector2(-1144 + randi() % 2137, -1536 + randi() % 2720)
+	add_child(client)
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		body.entrer_route()
@@ -52,6 +64,7 @@ func changer_voiture(nouvelle_scene):
 	var ancien_compteur = voiture_actuelle.compteur
 	var anciennes_voitures = voiture_actuelle.voitures_possedees
 	var ancien_boost = voiture_actuelle.boost_energy
+	var anciens_points = voiture_actuelle.points
 	voiture_actuelle.queue_free()
 	var nouvelle_voiture = nouvelle_scene.instantiate()
 	nouvelle_voiture.position = pos
@@ -60,4 +73,5 @@ func changer_voiture(nouvelle_scene):
 	nouvelle_voiture.compteur = ancien_compteur
 	nouvelle_voiture.voitures_possedees = anciennes_voitures
 	nouvelle_voiture.boost_energy = ancien_boost
+	nouvelle_voiture.points = anciens_points
 	voiture_actuelle = nouvelle_voiture

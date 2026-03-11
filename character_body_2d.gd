@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var dezoom = false
+var points = 0
 const SPEED = 100.0
 const BOOST_SPEED = 800.0
 var boost_energy = 100.0
@@ -11,6 +12,9 @@ var argent = 500
 var compteur = 0
 var voitures_possedees = ["voiture1"]
 @export var tache_sang_scene = preload("res://sang.tscn")
+
+func _ready():
+	add_to_group("voiture")
 
 func _process(_delta):
 	if Input.is_action_pressed("zoom_out"):
@@ -23,6 +27,9 @@ func _process(_delta):
 	
 	if has_node("CanvasLayer/JaugeCompteur"):
 		$CanvasLayer/JaugeCompteur.value = compteur
+	
+	if has_node("CanvasLayer/LabelPoints"):
+		$CanvasLayer/LabelPoints.text = "Points : " + str(points)
 	
 	if compteur >= 100:
 		get_tree().paused = true

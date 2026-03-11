@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bwioyu8wigcnu"]
+
+[ext_resource type="Script" uid="uid://c7jbtmnvp11ta" path="res://client.gd" id="1_1drpi"]
+[ext_resource type="Texture2D" uid="uid://cdw1uc87dilt4" path="res://client01.png" id="1_lgb4g"]
+[ext_resource type="Script" uid="uid://bheekdervgppj" path="res://cercle_rouge.gd" id="3_uohgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgb4g"]
+size = Vector2(256, 111)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1drpi"]
+radius = 50.0
+
+[node name="Client" type="CharacterBody2D" unique_id=1766147006]
+script = ExtResource("1_1drpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894695005]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_lgb4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=66423131]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_lgb4g")
+
+[node name="CercleRouge" type="Sprite2D" parent="." unique_id=1598474770]
+script = ExtResource("3_uohgo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=449521325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1329377529]
+shape = SubResource("CircleShape2D_1drpi")
+
+[node name="Label" type="Label" parent="." unique_id=168412889]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
