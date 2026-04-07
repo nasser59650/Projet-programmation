@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var dezoom = false
-var points = 0
 const SPEED = 100.0
 const BOOST_SPEED = 800.0
 var boost_energy = 100.0
@@ -27,9 +26,6 @@ func _process(_delta):
 	
 	if has_node("CanvasLayer/JaugeCompteur"):
 		$CanvasLayer/JaugeCompteur.value = compteur
-	
-	if has_node("CanvasLayer/LabelPoints"):
-		$CanvasLayer/LabelPoints.text = "Points : " + str(points)
 	
 	if compteur >= 100:
 		get_tree().paused = true

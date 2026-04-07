@@ -307,15 +307,6 @@ position = Vector2(500, 400)
 scale = Vector2(5, 5)
 texture = ExtResource("6_f6syk")
 
-[node name="LabelPoints" type="Label" parent="CanvasLayer" unique_id=214887532]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 100.0
-offset_bottom = 69.0
-grow_horizontal = 2
-
 [node name="Area2D" type="Area2D" parent="." unique_id=479958754]
 light_mask = 4
 visibility_layer = 4

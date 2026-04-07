@@ -64,7 +64,6 @@ func changer_voiture(nouvelle_scene):
 	var ancien_compteur = voiture_actuelle.compteur
 	var anciennes_voitures = voiture_actuelle.voitures_possedees
 	var ancien_boost = voiture_actuelle.boost_energy
-	var anciens_points = voiture_actuelle.points
 	voiture_actuelle.queue_free()
 	var nouvelle_voiture = nouvelle_scene.instantiate()
 	nouvelle_voiture.position = pos
@@ -73,5 +72,4 @@ func changer_voiture(nouvelle_scene):
 	nouvelle_voiture.compteur = ancien_compteur
 	nouvelle_voiture.voitures_possedees = anciennes_voitures
 	nouvelle_voiture.boost_energy = ancien_boost
-	nouvelle_voiture.points = anciens_points
 	voiture_actuelle = nouvelle_voiture
