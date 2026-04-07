@@ -163,16 +163,6 @@ offset_bottom = 623.0
 theme_override_colors/font_color = Color(1, 0, 0.007843138, 1)
 text = "RAGE"
 
-[node name="LabelGameOver" type="Label" parent="CanvasLayer" unique_id=266000268]
-visible = false
-offset_left = 300.0
-offset_top = 250.0
-offset_right = 10300.0
-offset_bottom = 10250.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
-text = "Bien joué"
-
 [node name="PanelVoiture2" type="Panel" parent="CanvasLayer" unique_id=157539306]
 visible = false
 offset_right = 40.0
@@ -307,6 +297,16 @@ modulate = Color(1, 1, 1, 0.93333334)
 position = Vector2(500, 400)
 scale = Vector2(5, 5)
 texture = ExtResource("7_j5vrk")
+
+[node name="LabelGameOver" type="Label" parent="CanvasLayer" unique_id=266000268]
+visible = false
+offset_left = 300.0
+offset_top = 250.0
+offset_right = 10300.0
+offset_bottom = 10250.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Bien joué"
 
 [node name="LabelPoints" type="Label" parent="CanvasLayer" unique_id=2006455086]
 anchors_preset = 5
