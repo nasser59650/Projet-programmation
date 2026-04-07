@@ -171,7 +171,7 @@ offset_right = 10300.0
 offset_bottom = 10250.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "GAME OVER"
+text = "Bien joué"
 
 [node name="PanelVoiture2" type="Panel" parent="CanvasLayer" unique_id=157539306]
 visible = false
