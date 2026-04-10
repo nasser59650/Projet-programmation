@@ -444,6 +444,18 @@ offset_bottom = -15.0
 grow_vertical = 0
 text = "[3]"
 
+[node name="FlecheDirection" type="Node2D" parent="CanvasLayer" unique_id=311311311]
+visible = false
+
+[node name="Fleche" type="Label" parent="CanvasLayer/FlecheDirection" unique_id=312312312]
+offset_left = 55.0
+offset_top = -20.0
+offset_right = 110.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 40
+text = "➤"
+
 [node name="LabelNotif" type="Label" parent="CanvasLayer" unique_id=102010201]
 visible = false
 anchor_left = 0.5

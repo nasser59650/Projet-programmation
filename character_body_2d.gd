@@ -53,6 +53,29 @@ func _process(_delta):
 				$CanvasLayer/LabelGameOver.text = "Bien joué !\nJeu réalisé en %dm%ds" % [minutes, seconds]
 			$CanvasLayer/LabelGameOver.visible = true
 	
+	if has_node("CanvasLayer/FlecheDirection"):
+		var fleche = $CanvasLayer/FlecheDirection
+		var cible: Node2D = null
+		# Cherche un client embarqué → pointer vers sa zone de dépôt
+		for c in get_tree().get_nodes_in_group("clients"):
+			if c.dans_voiture and c.zone_depot != null:
+				cible = c.zone_depot
+				break
+		# Sinon pointer vers le client le plus proche
+		if cible == null:
+			var clients = get_tree().get_nodes_in_group("clients")
+			for c in clients:
+				if not c.dans_voiture:
+					if cible == null or global_position.distance_to(c.global_position) < global_position.distance_to(cible.global_position):
+						cible = c
+		if cible != null:
+			var screen_center = get_viewport().get_visible_rect().size / 2
+			fleche.position = screen_center
+			fleche.visible = true
+			fleche.rotation = (cible.global_position - global_position).angle()
+		else:
+			fleche.visible = false
+
 	if compteur >= 50 and not _notif_shown_50:
 		_notif_shown_50 = true
 		_show_notif("Contrôle inversé !")
