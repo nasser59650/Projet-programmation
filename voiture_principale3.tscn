@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_7m8l8"]
 [ext_resource type="Texture2D" uid="uid://1a8f5kwcuw5c" path="res://Encre.png" id="6_fc6cg"]
 [ext_resource type="Texture2D" uid="uid://dk37pcgmxyfgm" path="res://camion.png" id="7_camv3"]
+[ext_resource type="Shader" path="res://drunk_vision.gdshader" id="8_drunk_v3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drunk_v3"]
+shader = ExtResource("8_drunk_v3")
+shader_parameter/intensity = 0.0
+shader_parameter/time_val = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(7.5, 23.5)
@@ -66,6 +72,13 @@ zoom = Vector2(2, 2)
 limit_enabled = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1647667904]
+
+[node name="DrunkEffect" type="ColorRect" parent="CanvasLayer" unique_id=903903903]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0)
+material = SubResource("ShaderMaterial_drunk_v3")
+mouse_filter = 2
 
 [node name="LabelArgent" type="Label" parent="CanvasLayer" unique_id=888999111]
 offset_left = 10.0

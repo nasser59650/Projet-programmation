@@ -48,9 +48,6 @@ func _process(_delta):
 				$CanvasLayer/LabelGameOver.text = "Bien joué !\nJeu réalisé en %dm%ds" % [minutes, seconds]
 			$CanvasLayer/LabelGameOver.visible = true
 	
-	if has_node("CanvasLayer/TacheEncre"):
-		$CanvasLayer/TacheEncre.visible = compteur >= 80
-
 	if compteur >= 75:
 		_drunk_time += _delta
 		var intensity = (compteur - 75.0) / 25.0
