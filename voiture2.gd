@@ -51,7 +51,7 @@ func _process(_delta):
 				var t = get_parent().game_timer
 				var minutes = int(t / 60)
 				var seconds = int(t) % 60
-				$CanvasLayer/LabelGameOver.text = "Bien joué !\nJeu réalisé en %dm%ds" % [minutes, seconds]
+				$CanvasLayer/LabelGameOver.text = "Bien joué !\n\nTemps : %dm%ds\nArgent gagné : %d$" % [minutes, seconds, argent]
 			$CanvasLayer/LabelGameOver.visible = true
 	
 	if has_node("CanvasLayer/FlecheDirection"):
