@@ -49,12 +49,19 @@ func _process(_delta):
 		$CanvasLayer/TacheEncre.visible = compteur >= 80
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		if has_node("CanvasLayer/PanelVoiture2"):
-			$CanvasLayer/PanelVoiture2.visible = false
-		if has_node("CanvasLayer/PanelVoiture3"):
-			$CanvasLayer/PanelVoiture3.visible = false
-		if has_node("CanvasLayer/MenuShop"):
-			$CanvasLayer/MenuShop.visible = false
+		var panel2_open = has_node("CanvasLayer/PanelVoiture2") and $CanvasLayer/PanelVoiture2.visible
+		var panel3_open = has_node("CanvasLayer/PanelVoiture3") and $CanvasLayer/PanelVoiture3.visible
+		var shop_open = has_node("CanvasLayer/MenuShop") and $CanvasLayer/MenuShop.visible
+		if panel2_open or panel3_open or shop_open:
+			if has_node("CanvasLayer/PanelVoiture2"):
+				$CanvasLayer/PanelVoiture2.visible = false
+			if has_node("CanvasLayer/PanelVoiture3"):
+				$CanvasLayer/PanelVoiture3.visible = false
+			if has_node("CanvasLayer/MenuShop"):
+				$CanvasLayer/MenuShop.visible = false
+		else:
+			if has_node("CanvasLayer/MenuShop"):
+				$CanvasLayer/MenuShop.visible = true
 	
 	if has_node("CanvasLayer/MenuShop/BoutonVoiture2"):
 		$CanvasLayer/MenuShop/BoutonVoiture2.visible = !("voiture2" in voitures_possedees)
