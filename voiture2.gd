@@ -6,6 +6,7 @@ const BOOST_SPEED = 800.0
 const ACCELERATION = 400.0
 const BOOST_ACCEL = 2000.0
 const STOP_TIME = 0.25
+const BOOST_STOP_TIME = 0.08
 var _decel_rate: float = 0.0
 var _drunk_time: float = 0.0
 var _notif_time: float = 0.0
@@ -168,7 +169,8 @@ func _physics_process(_delta):
 		rotation = direction.angle() + PI/2
 	else:
 		if _decel_rate == 0.0:
-			_decel_rate = velocity.length() / STOP_TIME
+			var stop = BOOST_STOP_TIME if using_boost else STOP_TIME
+			_decel_rate = velocity.length() / stop
 		velocity = velocity.move_toward(Vector2.ZERO, _decel_rate * _delta)
 
 	move_and_slide()
