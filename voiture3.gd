@@ -7,11 +7,12 @@ const ACCELERATION = 400.0
 const BOOST_ACCEL = 2000.0
 const STOP_TIME = 0.25
 var _decel_rate: float = 0.0
+var _drunk_time: float = 0.0
 var boost_energy = 100.0
 const BOOST_MAX = 100.0
 const BOOST_DRAIN = 30.0
 const BOOST_REGEN = 0.0
-var argent = 500
+var argent = 0
 var compteur = 0
 var voitures_possedees = ["voiture1"]
 @export var tache_sang_scene = preload("res://sang.tscn")
@@ -49,7 +50,24 @@ func _process(_delta):
 	
 	if has_node("CanvasLayer/TacheEncre"):
 		$CanvasLayer/TacheEncre.visible = compteur >= 80
-	
+
+	if compteur >= 75:
+		_drunk_time += _delta
+		var intensity = (compteur - 75.0) / 25.0
+		var wobble_x = sin(_drunk_time * 1.5) * 30 * intensity
+		var wobble_y = cos(_drunk_time * 2.3) * 20 * intensity
+		if has_node("Camera2D"):
+			$Camera2D.offset = Vector2(wobble_x, wobble_y)
+		if has_node("CanvasLayer/DrunkEffect"):
+			$CanvasLayer/DrunkEffect.material.set_shader_parameter("intensity", intensity)
+			$CanvasLayer/DrunkEffect.material.set_shader_parameter("time_val", _drunk_time)
+	else:
+		_drunk_time = 0.0
+		if has_node("Camera2D"):
+			$Camera2D.offset = Vector2.ZERO
+		if has_node("CanvasLayer/DrunkEffect"):
+			$CanvasLayer/DrunkEffect.material.set_shader_parameter("intensity", 0.0)
+
 	if Input.is_action_just_pressed("ui_cancel"):
 		if has_node("CanvasLayer/MenuShop"):
 			$CanvasLayer/MenuShop.visible = !$CanvasLayer/MenuShop.visible
@@ -120,6 +138,7 @@ func _on_bouton_boost_pressed() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pietons"):
 		compteur += 5
+		argent += 25
 		var tache = tache_sang_scene.instantiate()
 		tache.position = body.position
 		get_parent().add_child(tache)
