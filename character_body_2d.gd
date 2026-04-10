@@ -3,6 +3,9 @@ extends CharacterBody2D
 var dezoom = false
 const SPEED = 100.0
 const BOOST_SPEED = 800.0
+const ACCELERATION = 400.0
+const BOOST_ACCEL = 2000.0
+const FRICTION = 300.0
 var boost_energy = 100.0
 const BOOST_MAX = 100.0
 const BOOST_DRAIN = 30.0
@@ -91,11 +94,14 @@ func _physics_process(_delta):
 		boost_energy = min(boost_energy, BOOST_MAX)
 	
 	var current_speed = BOOST_SPEED if using_boost else SPEED
-	velocity = direction * current_speed
-	
+	var accel = BOOST_ACCEL if using_boost else ACCELERATION
+
 	if direction != Vector2.ZERO:
+		velocity = velocity.move_toward(direction * current_speed, accel * _delta)
 		rotation = direction.angle() + PI/2
-	
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * _delta)
+
 	move_and_slide()
 	
 	if has_node("CanvasLayer/Jauge"):
