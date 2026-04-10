@@ -143,8 +143,8 @@ offset_left = 288.0
 offset_top = 324.0
 offset_right = 576.0
 offset_bottom = 648.0
-text = "Moto -150$"
-icon = ExtResource("6_xcgmi")
+text = "Camion -150$"
+icon = ExtResource("2_wskht")
 expand_icon = true
 
 [node name="JaugeCompteur" type="ProgressBar" parent="CanvasLayer" unique_id=651375144]
@@ -278,7 +278,7 @@ offset_left = 100.0
 offset_top = 100.0
 offset_right = 364.0
 offset_bottom = 562.0
-texture = ExtResource("6_xcgmi")
+texture = ExtResource("2_wskht")
 
 [node name="BoutonRetour" type="Button" parent="CanvasLayer/PanelVoiture3" unique_id=163029541]
 layout_mode = 0

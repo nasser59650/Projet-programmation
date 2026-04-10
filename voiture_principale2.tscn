@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0xn5twc5l4fr" path="res://Boost.png" id="4_my0fv"]
 [ext_resource type="Texture2D" uid="uid://cnv61a2o8fvxc" path="res://moto_rose.png" id="5_j7vxg"]
 [ext_resource type="Texture2D" uid="uid://1a8f5kwcuw5c" path="res://Encre.png" id="6_f6syk"]
+[ext_resource type="Texture2D" uid="uid://dk37pcgmxyfgm" path="res://camion.png" id="7_camv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(10, 21)
@@ -142,8 +143,8 @@ offset_left = 288.0
 offset_top = 324.0
 offset_right = 576.0
 offset_bottom = 648.0
-text = "Moto -150$"
-icon = ExtResource("5_j7vxg")
+text = "Camion -150$"
+icon = ExtResource("7_camv2")
 expand_icon = true
 
 [node name="JaugeCompteur" type="ProgressBar" parent="CanvasLayer" unique_id=651375144]
@@ -308,7 +309,7 @@ offset_left = 100.0
 offset_top = 100.0
 offset_right = 364.0
 offset_bottom = 562.0
-texture = ExtResource("5_j7vxg")
+texture = ExtResource("7_camv2")
 
 [node name="BoutonRetour" type="Button" parent="CanvasLayer/PanelVoiture3" unique_id=855984020]
 layout_mode = 0

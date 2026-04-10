@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var pieton_scene = preload("res://piéton_1.tscn")
-@export var voiture1_scene = preload("res://voiture_principale.tscn")
+@export var voiture1_scene = preload("res://voiture_principale3.tscn")
 @export var voiture2_scene = preload("res://voiture_principale2.tscn")
-@export var voiture3_scene = preload("res://voiture_principale3.tscn")
+@export var voiture3_scene = preload("res://voiture_principale.tscn")
 @export var client_scene = preload("res://client.tscn")
 
 var spawn_timer = 0.0
