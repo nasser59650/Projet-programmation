@@ -403,6 +403,47 @@ theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 text = "00:00"
 
+[node name="BoutonVehicule1" type="Button" parent="CanvasLayer" unique_id=201201201]
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -55.0
+offset_right = 60.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "[1]"
+
+[node name="BoutonVehicule2" type="Button" parent="CanvasLayer" unique_id=202202202]
+visible = false
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = -55.0
+offset_right = 110.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "[2]"
+
+[node name="BoutonVehicule3" type="Button" parent="CanvasLayer" unique_id=203203203]
+visible = false
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_top = -55.0
+offset_right = 160.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "[3]"
+
 [node name="LabelNotif" type="Label" parent="CanvasLayer" unique_id=101010101]
 visible = false
 anchor_left = 0.5
@@ -427,6 +468,9 @@ collision_mask = 2
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_ta5nu")
 
+[connection signal="pressed" from="CanvasLayer/BoutonVehicule1" to="." method="_on_bouton_vehicule_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoutonVehicule2" to="." method="_on_bouton_vehicule_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoutonVehicule3" to="." method="_on_bouton_vehicule_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonAcheter2" to="." method="_on_bouton_acheter_voiture_2_pressed"]

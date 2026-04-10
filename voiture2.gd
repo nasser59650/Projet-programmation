@@ -99,6 +99,11 @@ func _process(_delta):
 	if has_node("CanvasLayer/MenuShop/BoutonAcheter3"):
 		$CanvasLayer/MenuShop/BoutonAcheter3.visible = !("voiture3" in voitures_possedees)
 
+	if has_node("CanvasLayer/BoutonVehicule2"):
+		$CanvasLayer/BoutonVehicule2.visible = "voiture2" in voitures_possedees
+	if has_node("CanvasLayer/BoutonVehicule3"):
+		$CanvasLayer/BoutonVehicule3.visible = "voiture3" in voitures_possedees
+
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
 	var inverse = compteur >= 50
@@ -175,6 +180,17 @@ func _on_bouton_acheter_voiture_3_pressed() -> void:
 	if argent >= 150:
 		argent -= 150
 		voitures_possedees.append("voiture3")
+		get_parent().changer_voiture(get_parent().voiture3_scene)
+
+func _on_bouton_vehicule_1_pressed() -> void:
+	get_parent().changer_voiture(get_parent().voiture1_scene)
+
+func _on_bouton_vehicule_2_pressed() -> void:
+	if "voiture2" in voitures_possedees:
+		get_parent().changer_voiture(get_parent().voiture2_scene)
+
+func _on_bouton_vehicule_3_pressed() -> void:
+	if "voiture3" in voitures_possedees:
 		get_parent().changer_voiture(get_parent().voiture3_scene)
 
 func _show_notif(msg: String) -> void:

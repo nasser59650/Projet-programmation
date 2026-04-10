@@ -403,6 +403,47 @@ position = Vector2(500, 400)
 scale = Vector2(5, 5)
 texture = ExtResource("6_f6syk")
 
+[node name="BoutonVehicule1" type="Button" parent="CanvasLayer" unique_id=211211211]
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -55.0
+offset_right = 60.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "[1]"
+
+[node name="BoutonVehicule2" type="Button" parent="CanvasLayer" unique_id=212212212]
+visible = false
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = -55.0
+offset_right = 110.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "[2]"
+
+[node name="BoutonVehicule3" type="Button" parent="CanvasLayer" unique_id=213213213]
+visible = false
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_top = -55.0
+offset_right = 160.0
+offset_bottom = -15.0
+grow_vertical = 0
+text = "[3]"
+
 [node name="LabelNotif" type="Label" parent="CanvasLayer" unique_id=102010201]
 visible = false
 anchor_left = 0.5
@@ -427,6 +468,9 @@ collision_mask = 2
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ta5nu")
 
+[connection signal="pressed" from="CanvasLayer/BoutonVehicule1" to="." method="_on_bouton_vehicule_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoutonVehicule2" to="." method="_on_bouton_vehicule_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoutonVehicule3" to="." method="_on_bouton_vehicule_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonAcheter2" to="." method="_on_bouton_acheter_voiture_2_pressed"]
