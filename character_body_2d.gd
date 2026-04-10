@@ -5,7 +5,8 @@ const SPEED = 100.0
 const BOOST_SPEED = 800.0
 const ACCELERATION = 400.0
 const BOOST_ACCEL = 2000.0
-const FRICTION = 300.0
+const STOP_TIME = 0.25
+var _decel_rate: float = 0.0
 var boost_energy = 100.0
 const BOOST_MAX = 100.0
 const BOOST_DRAIN = 30.0
@@ -97,10 +98,13 @@ func _physics_process(_delta):
 	var accel = BOOST_ACCEL if using_boost else ACCELERATION
 
 	if direction != Vector2.ZERO:
+		_decel_rate = 0.0
 		velocity = velocity.move_toward(direction * current_speed, accel * _delta)
 		rotation = direction.angle() + PI/2
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * _delta)
+		if _decel_rate == 0.0:
+			_decel_rate = velocity.length() / STOP_TIME
+		velocity = velocity.move_toward(Vector2.ZERO, _decel_rate * _delta)
 
 	move_and_slide()
 	
