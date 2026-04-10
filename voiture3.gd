@@ -51,25 +51,14 @@ func _process(_delta):
 		$CanvasLayer/TacheEncre.visible = compteur >= 80
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		var panel2_open = has_node("CanvasLayer/PanelVoiture2") and $CanvasLayer/PanelVoiture2.visible
-		var panel3_open = has_node("CanvasLayer/PanelVoiture3") and $CanvasLayer/PanelVoiture3.visible
-		var shop_open = has_node("CanvasLayer/MenuShop") and $CanvasLayer/MenuShop.visible
-		if panel2_open or panel3_open or shop_open:
-			if has_node("CanvasLayer/PanelVoiture2"):
-				$CanvasLayer/PanelVoiture2.visible = false
-			if has_node("CanvasLayer/PanelVoiture3"):
-				$CanvasLayer/PanelVoiture3.visible = false
-			if has_node("CanvasLayer/MenuShop"):
-				$CanvasLayer/MenuShop.visible = false
-		else:
-			if has_node("CanvasLayer/MenuShop"):
-				$CanvasLayer/MenuShop.visible = true
+		if has_node("CanvasLayer/MenuShop"):
+			$CanvasLayer/MenuShop.visible = !$CanvasLayer/MenuShop.visible
 	
-	if has_node("CanvasLayer/MenuShop/BoutonVoiture2"):
-		$CanvasLayer/MenuShop/BoutonVoiture2.visible = !("voiture2" in voitures_possedees)
-	
-	if has_node("CanvasLayer/MenuShop/BoutonVoiture3"):
-		$CanvasLayer/MenuShop/BoutonVoiture3.visible = !("voiture3" in voitures_possedees)
+	if has_node("CanvasLayer/MenuShop/BoutonAcheter2"):
+		$CanvasLayer/MenuShop/BoutonAcheter2.visible = !("voiture2" in voitures_possedees)
+
+	if has_node("CanvasLayer/MenuShop/BoutonAcheter3"):
+		$CanvasLayer/MenuShop/BoutonAcheter3.visible = !("voiture3" in voitures_possedees)
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
@@ -136,39 +125,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		get_parent().add_child(tache)
 		body.queue_free()
 
-func _on_bouton_voiture_2_pressed() -> void:
-	$CanvasLayer/MenuShop.visible = false
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = true
-
 func _on_bouton_acheter_voiture_2_pressed() -> void:
 	if argent >= 100:
 		argent -= 100
 		voitures_possedees.append("voiture2")
 		get_parent().changer_voiture(get_parent().voiture2_scene)
 
-func _on_button_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = false
-	$CanvasLayer/MenuShop.visible = true
-
-func _on_bouton_voiture_3_pressed() -> void:
-	$CanvasLayer/MenuShop.visible = false
-	if has_node("CanvasLayer/PanelVoiture3"):
-		$CanvasLayer/PanelVoiture3.visible = true
-
 func _on_bouton_acheter_voiture_3_pressed() -> void:
 	if argent >= 150:
 		argent -= 150
 		voitures_possedees.append("voiture3")
 		get_parent().changer_voiture(get_parent().voiture3_scene)
-
-func _on_bouton_retour_voiture_3_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture3"):
-		$CanvasLayer/PanelVoiture3.visible = false
-	$CanvasLayer/MenuShop.visible = true
-
-func _on_bouton_retour_pressed() -> void:
-	if has_node("CanvasLayer/PanelVoiture2"):
-		$CanvasLayer/PanelVoiture2.visible = false
-	$CanvasLayer/MenuShop.visible = true

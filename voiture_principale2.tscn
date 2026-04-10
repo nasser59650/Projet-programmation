@@ -125,9 +125,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -190.0
+offset_top = -220.0
 offset_right = 250.0
-offset_bottom = 190.0
+offset_bottom = 220.0
 
 [node name="Label" type="Label" parent="CanvasLayer/MenuShop" unique_id=1310236514]
 layout_mode = 0
@@ -143,30 +143,70 @@ layout_mode = 0
 offset_left = 20.0
 offset_top = 48.0
 offset_right = 480.0
-offset_bottom = 148.0
+offset_bottom = 118.0
 text = "Recharger Boost - 20$"
 icon = ExtResource("4_my0fv")
 expand_icon = true
 
-[node name="BoutonVoiture2" type="Button" parent="CanvasLayer/MenuShop" unique_id=284609005]
+[node name="ImageVoiture2" type="TextureRect" parent="CanvasLayer/MenuShop" unique_id=712823935]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 128.0
+offset_right = 165.0
+offset_bottom = 198.0
+stretch_mode = 6
+texture = ExtResource("2_23gb6")
+
+[node name="LabelStats2" type="Label" parent="CanvasLayer/MenuShop" unique_id=311322334]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 158.0
+offset_top = 203.0
 offset_right = 240.0
-offset_bottom = 370.0
-text = "Acheter la voiture -100$"
-icon = ExtResource("2_23gb6")
-expand_icon = true
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
+text = "Vitesse : 100
+Boost : 800
+Prix : 100$"
 
-[node name="BoutonVoiture3" type="Button" parent="CanvasLayer/MenuShop" unique_id=1709891711]
+[node name="BoutonAcheter2" type="Button" parent="CanvasLayer/MenuShop" unique_id=411422434]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 295.0
+offset_right = 240.0
+offset_bottom = 345.0
+text = "Acheter - 100$"
+
+[node name="ImageVoiture3" type="TextureRect" parent="CanvasLayer/MenuShop" unique_id=812923945]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 128.0
+offset_right = 490.0
+offset_bottom = 198.0
+stretch_mode = 5
+texture = ExtResource("7_camv2")
+
+[node name="LabelStats3" type="Label" parent="CanvasLayer/MenuShop" unique_id=511522534]
 layout_mode = 0
 offset_left = 260.0
-offset_top = 158.0
+offset_top = 203.0
 offset_right = 490.0
-offset_bottom = 370.0
-text = "Camion -150$"
-icon = ExtResource("7_camv2")
-expand_icon = true
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
+text = "Vitesse : 100
+Boost : 800
+Prix : 150$"
+
+[node name="BoutonAcheter3" type="Button" parent="CanvasLayer/MenuShop" unique_id=611622634]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 295.0
+offset_right = 490.0
+offset_bottom = 345.0
+text = "Acheter - 150$"
 
 [node name="JaugeCompteur" type="ProgressBar" parent="CanvasLayer" unique_id=651375144]
 offset_left = 1000.0
@@ -362,10 +402,6 @@ shape = SubResource("RectangleShape2D_ta5nu")
 
 [connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonVoiture2" to="." method="_on_bouton_voiture_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonVoiture3" to="." method="_on_bouton_voiture_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelVoiture2/BoutonAcheterVoiture2" to="." method="_on_bouton_acheter_voiture_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelVoiture2/BoutonRetour" to="." method="_on_bouton_retour_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelVoiture3/BoutonAcheterVoiture3" to="." method="_on_bouton_acheter_voiture_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelVoiture3/BoutonRetour" to="." method="_on_bouton_retour_voiture_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonAcheter2" to="." method="_on_bouton_acheter_voiture_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuShop/BoutonAcheter3" to="." method="_on_bouton_acheter_voiture_3_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
