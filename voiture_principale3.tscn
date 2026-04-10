@@ -238,6 +238,20 @@ vertical_alignment = 1
 autowrap_mode = 3
 text = "Bien joué"
 
+[node name="BoutonRejouer" type="Button" parent="CanvasLayer" unique_id=403403403]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 160.0
+offset_right = 80.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 30
+text = "Rejouer"
+process_mode = 3
+
 [node name="LabelTimer" type="Label" parent="CanvasLayer" unique_id=777888999]
 anchor_left = 0.5
 anchor_top = 0.0
@@ -466,6 +480,7 @@ shape = SubResource("RectangleShape2D_ta5nu")
 [connection signal="pressed" from="CanvasLayer/BoutonVehicule1" to="." method="_on_bouton_vehicule_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoutonVehicule2" to="." method="_on_bouton_vehicule_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoutonVehicule3" to="." method="_on_bouton_vehicule_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoutonRejouer" to="." method="_on_bouton_rejouer_pressed"]
 [connection signal="pressed" from="CanvasLayer/BoutonShop" to="." method="_on_bouton_shop_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonBoost" to="." method="_on_bouton_boost_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuShop/BoutonAcheter2" to="." method="_on_bouton_acheter_voiture_2_pressed"]

@@ -53,6 +53,8 @@ func _process(_delta):
 				var seconds = int(t) % 60
 				$CanvasLayer/LabelGameOver.text = "Bien joué !\n\nTemps : %dm%ds\nArgent gagné : %d$" % [minutes, seconds, argent]
 			$CanvasLayer/LabelGameOver.visible = true
+		if has_node("CanvasLayer/BoutonRejouer"):
+			$CanvasLayer/BoutonRejouer.visible = true
 	
 	if has_node("CanvasLayer/FlecheDirection"):
 		var fleche = $CanvasLayer/FlecheDirection
@@ -217,6 +219,13 @@ func _on_bouton_vehicule_2_pressed() -> void:
 func _on_bouton_vehicule_3_pressed() -> void:
 	if "voiture3" in voitures_possedees:
 		get_parent().changer_voiture(get_parent().voiture3_scene)
+
+func _on_bouton_rejouer_pressed() -> void:
+	_rejouer()
+
+func _rejouer() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 
 func _show_notif(msg: String) -> void:
 	if has_node("CanvasLayer/LabelNotif"):
