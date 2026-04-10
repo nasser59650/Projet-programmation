@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://itnlua6ixqj"]
 
 [ext_resource type="Script" uid="uid://i83n72rl4wbv" path="res://node_2d.gd" id="1_0hol4"]
-[ext_resource type="PackedScene" uid="uid://dg2rlaopvr1ex" path="res://voiture_principale.tscn" id="2_0hol4"]
-[ext_resource type="PackedScene" uid="uid://bf4mxl23rjixg" path="res://voiture_principale3.tscn" id="9_moto"]
 [ext_resource type="PackedScene" uid="uid://n6myurh0vucm" path="res://piéton_1.tscn" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://dx2vgkudfulvj" path="res://gta1-liberty-city-hd.png" id="3_epypp"]
-[ext_resource type="PackedScene" uid="uid://b8ufodcacpx77" path="res://sang.tscn" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://bf4mxl23rjixg" path="res://voiture_principale3.tscn" id="9_moto"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kdubu"]
 a = Vector2(2764, -293)
@@ -577,7 +575,5 @@ polygon = PackedVector2Array(893, 496, 937, 496, 933, 1102, 893, 1102)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1439453683]
 position = Vector2(-1144, -1536)
-
-[node name="sang" parent="." unique_id=882046108 instance=ExtResource("6_kdubu")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
