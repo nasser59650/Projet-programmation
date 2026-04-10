@@ -27,6 +27,8 @@ func _process(_delta):
 	
 	if has_node("CanvasLayer/MenuShop/Label"):
 		$CanvasLayer/MenuShop/Label.text = "Argent : " + str(int(argent)) + "$"
+	if has_node("CanvasLayer/LabelArgent"):
+		$CanvasLayer/LabelArgent.text = str(int(argent)) + "$"
 	
 	if has_node("CanvasLayer/JaugeCompteur"):
 		$CanvasLayer/JaugeCompteur.value = compteur
