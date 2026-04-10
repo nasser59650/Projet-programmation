@@ -9,7 +9,7 @@ extends Node2D
 var spawn_timer = 0.0
 const SPAWN_TIME = 1.0
 var client_timer: float = 0.0
-const CLIENT_SPAWN_TIME = 10.0
+const CLIENT_SPAWN_TIME = 30.0
 var voiture_actuelle = null
 var rage_globale = 0
 var game_timer: float = 0.0
