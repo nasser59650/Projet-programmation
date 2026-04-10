@@ -189,7 +189,7 @@ func _on_bouton_boost_pressed() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pietons"):
 		compteur += 5
-		argent += 25
+		argent += 10
 		var tache = tache_sang_scene.instantiate()
 		tache.position = body.position
 		get_parent().add_child(tache)
