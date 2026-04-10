@@ -12,6 +12,7 @@ var client_timer: float = 0.0
 const CLIENT_SPAWN_TIME = 10.0
 var voiture_actuelle = null
 var rage_globale = 0
+var game_timer: float = 0.0
 
 func _ready():
 	for i in range(50):
@@ -19,6 +20,7 @@ func _ready():
 	voiture_actuelle = get_node("voiture principale")
 
 func _process(delta):
+	game_timer += delta
 	spawn_timer += delta
 	if spawn_timer >= SPAWN_TIME:
 		spawn_timer = 0.0

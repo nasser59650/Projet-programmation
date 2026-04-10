@@ -146,13 +146,34 @@ text = "RAGE"
 
 [node name="LabelGameOver" type="Label" parent="CanvasLayer" unique_id=266000268]
 visible = false
-offset_left = 300.0
-offset_top = 250.0
-offset_right = 10300.0
-offset_bottom = 10250.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 text = "GAME OVER"
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer" unique_id=777888999]
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = 5.0
+offset_right = 90.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+text = "00:00"
 
 [node name="PanelVoiture2" type="Panel" parent="CanvasLayer" unique_id=126906401]
 visible = false

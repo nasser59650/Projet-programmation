@@ -26,10 +26,19 @@ func _process(_delta):
 	
 	if has_node("CanvasLayer/JaugeCompteur"):
 		$CanvasLayer/JaugeCompteur.value = compteur
-	
+
+	if has_node("CanvasLayer/LabelTimer"):
+		var t = get_parent().game_timer
+		$CanvasLayer/LabelTimer.text = "%02d:%02d" % [int(t / 60), int(t) % 60]
+
 	if compteur >= 100:
 		get_tree().paused = true
 		if has_node("CanvasLayer/LabelGameOver"):
+			if not $CanvasLayer/LabelGameOver.visible:
+				var t = get_parent().game_timer
+				var minutes = int(t / 60)
+				var seconds = int(t) % 60
+				$CanvasLayer/LabelGameOver.text = "Bien joué !\nJeu réalisé en %dm%ds" % [minutes, seconds]
 			$CanvasLayer/LabelGameOver.visible = true
 	
 	if has_node("CanvasLayer/TacheEncre"):
