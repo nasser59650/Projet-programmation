@@ -22,6 +22,8 @@ var voitures_possedees = ["voiture1"]
 
 func _ready():
 	add_to_group("voiture")
+	if has_node("CanvasLayer/BoutonVehicule3"):
+		$CanvasLayer/BoutonVehicule3.add_theme_color_override("font_color", Color(1, 0.85, 0, 1))
 
 func _process(_delta):
 	if Input.is_action_pressed("zoom_out"):
