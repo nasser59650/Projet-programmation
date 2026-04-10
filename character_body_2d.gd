@@ -8,6 +8,9 @@ const BOOST_ACCEL = 2000.0
 const STOP_TIME = 0.25
 var _decel_rate: float = 0.0
 var _drunk_time: float = 0.0
+var _notif_time: float = 0.0
+var _notif_shown_50: bool = false
+var _notif_shown_75: bool = false
 var boost_energy = 100.0
 const BOOST_MAX = 100.0
 const BOOST_DRAIN = 30.0
@@ -48,9 +51,30 @@ func _process(_delta):
 				$CanvasLayer/LabelGameOver.text = "Bien joué !\nJeu réalisé en %dm%ds" % [minutes, seconds]
 			$CanvasLayer/LabelGameOver.visible = true
 	
+	if compteur >= 50 and not _notif_shown_50:
+		_notif_shown_50 = true
+		_show_notif("Contrôle inversé !")
+	if compteur >= 75 and not _notif_shown_75:
+		_notif_shown_75 = true
+		_show_notif("Vision trouble !")
+
+	if _notif_time > 0:
+		_notif_time -= _delta
+		if has_node("CanvasLayer/LabelNotif"):
+			var a: float
+			if _notif_time > 0.8:
+				a = (1.0 - _notif_time) / 0.2
+			elif _notif_time > 0.3:
+				a = 1.0
+			else:
+				a = _notif_time / 0.3
+			$CanvasLayer/LabelNotif.modulate.a = a
+			if _notif_time <= 0:
+				$CanvasLayer/LabelNotif.visible = false
+
 	if compteur >= 75:
 		_drunk_time += _delta
-		var intensity = (compteur - 75.0) / 25.0
+		var intensity = 0.4 + (compteur - 75.0) / 25.0 * 0.6
 		var wobble_x = sin(_drunk_time * 1.5) * 30 * intensity
 		var wobble_y = cos(_drunk_time * 2.3) * 20 * intensity
 		if has_node("Camera2D"):
@@ -152,3 +176,10 @@ func _on_bouton_acheter_voiture_3_pressed() -> void:
 		argent -= 150
 		voitures_possedees.append("voiture3")
 		get_parent().changer_voiture(get_parent().voiture3_scene)
+
+func _show_notif(msg: String) -> void:
+	if has_node("CanvasLayer/LabelNotif"):
+		$CanvasLayer/LabelNotif.text = msg
+		$CanvasLayer/LabelNotif.modulate.a = 0.0
+		$CanvasLayer/LabelNotif.visible = true
+		_notif_time = 1.0
